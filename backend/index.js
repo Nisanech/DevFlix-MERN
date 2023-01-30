@@ -32,7 +32,7 @@ app.use("/users", userRoute);
 connectDB();
 
 // Puerto de conexión del servidor
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 // Conexión del servidor
 app.get("/", (req, res) => {

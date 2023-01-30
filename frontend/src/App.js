@@ -1,6 +1,12 @@
 // Dependencias
+import React, { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 
+"react-router-dom";
+import { useDispatch } from "react-redux";
+
+// Redux
+import {setUser} from './redux/actions/authSlice'
 
 // Páginas
 import Home from "./pages/Home";
@@ -11,14 +17,21 @@ import Register from "./pages/Register";
 import Header from "./components/Header/Header";
 
 // Estilos
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  
+  const dispatch = useDispatch();
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  useEffect(() => {
+    dispatch(setUser(user));
+  }, []);
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
 
         <ToastContainer />
 
