@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Saira:wght@600&display=swap");
+
+:root {
+  --titleText: "Quicksand", sans-serif;
+  --text: "Saira", sans-serif;
+}
+
+.general-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_ListMovies {
+  background-color: black;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name-filter_ListMovies {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+}
+
+.name-filter_ListMovies p {
+  font-family: var(--titleText);
+  font-size: 4vw;
+  font-weight: 100;
+}
+.name-filter_ListMovies select {
+  max-width: 40vw;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 0 10px;
+  color: grey;
+  font-family: var(--titleText);
+}
+.card {
+  margin: 10px;
+  padding: 5px;
+  width: 50vw;
+}
+.card img {
+  width: 95%;
+  margin: 2vw auto 0 auto;
+}
+.card button {
+  width: 100%;
+}
+
+@media screen and (min-width: 575px) {
+  .container_ListMovies {
+    width: 60vw;
+  }
+  .name-filter_ListMovies {
+    width: 50vw;
+  }
+  .name-filter_ListMovies p {
+    font-size: 2vw;
+  }
+  .card {
+    width: 15vw;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+  }
+  .card img {
+    margin: 5px auto 0 auto;
+  }
+  .container_movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
