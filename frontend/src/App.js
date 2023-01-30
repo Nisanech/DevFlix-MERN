@@ -21,6 +21,7 @@ function App() {
         <Header />
 
         <ToastContainer />
+        <Register/>
 
         <Routes>
           <Route path="/" element={<Home />} />
