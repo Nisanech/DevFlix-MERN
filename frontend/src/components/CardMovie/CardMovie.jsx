@@ -40,8 +40,8 @@ const CardMovie= () => {
                 </div>
             </div>
                     </div>
-                    <h3>DESCRIPCION</h3>
-                    <p>Nombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcionNombre descripcion</p>
+                    <h3>DESCRIPCIÓN</h3>
+                    <p className="description">El filme cuenta la historia de una niña de diez años llamada Chihiro, quien durante una mudanza se ve atrapada en un mundo mágico y sobrenatural, teniendo como misión buscar su libertad y la de sus padres, y así poder regresar a su mundo.</p>
                     <div className="buttons">
                         <button className="editButton">Editar</button>
                         <button className="deleteButton">Eliminar</button>
