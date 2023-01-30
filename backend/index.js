@@ -6,30 +6,39 @@ dotenv.config();
 
 // Importar Cors para las peticiones HTTP
 const cors = require("cors");
+const morgan = require("morgan");
 
 // Importar archivo con la conexión de la base de datos
 const connectDB = require("./mongoDB");
 
 // Importar archivo con las rutas del usuario
-const routes = require("./routes/index");
+const userRoute = require("./routes/userRoute");
 
-// Puerto de conexión del servidor
-const PORT = process.env.PORT || 5000;
+//Import file movies
+const fileMovies = require("./routes/moviesRoute");
 
-// App
+// Inicializar el servidor de express
 const app = express();
 
-// Usar express
-app.use(express.json());
+// Middleware
+app.use(morgan("dev"));
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // Usar cors
 app.use(cors());
 
+// Endpoints
+app.use("/users", userRoute);
+
+// Endpoints movies
+app.use("/movies", fileMovies);
+
 // Usar conexión de la base de datos
 connectDB();
 
-// Uso de las rutas
-// app.use('/api', routes)
+// Puerto de conexión del servidor
+const PORT = process.env.PORT || 5000;
 
 // Conexión del servidor
 app.get("/", (req, res) => {
