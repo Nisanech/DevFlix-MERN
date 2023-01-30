@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+
 // Importar provider para hacer uso del contexto con redux
 import { Provider } from "react-redux";
 

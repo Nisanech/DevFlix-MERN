@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Páginas
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -18,11 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-
         <ToastContainer />
-        <Register/>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
