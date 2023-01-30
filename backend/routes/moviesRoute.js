@@ -13,7 +13,7 @@ const{
 
 
 //Routes to the API
-router.get("/movies", getAllMovies); //Get Movie
+router.get("/movies", getAllMovies); //Get Movies
 router.post("/movie/new", addMovie); //Create Movie
 router.put("/movie/editMovie/:id", updateMovie); //Edit Movie
 router.get("/movie/toggleDelete/:id", deleteMovie); //Delete Movie
