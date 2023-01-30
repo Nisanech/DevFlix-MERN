@@ -5,16 +5,20 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 
 // Importar store de redux
-import store from './redux/store'
+import store from "./redux/store";
 
+// Componentes
 import App from "./App";
+
+// Estilos
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-  </Provider>
+    </Provider>
+  </React.StrictMode>
 );
