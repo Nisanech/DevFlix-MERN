@@ -1,0 +1,120 @@
+.head {
+    background-color: #131313;
+    color: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.info {}
+
+.info h1 {
+    font-size: 20px;
+    margin: 0px;
+
+}
+
+.info h2 {
+    font-size: 15px;
+}
+
+.icongr {
+
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+.add {
+    background: linear-gradient(90deg, rgba(0, 21, 142, 1) 0%, rgba(187, 14, 14, 1) 100%);
+    border-radius: 50px;
+    width: 110px;
+    height: 35px;
+    border: none;
+    color: white;
+}
+
+.add:hover {
+    background: linear-gradient(90deg, rgba(0, 21, 142, 0.692) 0%, rgba(187, 14, 14, 0.678) 100%);
+    color: white;
+    font-weight: 600;
+}
+
+/* QUERY CELULAR */
+@media (max-width: 481px) {
+    
+}
+
+/* QUERY TABLET */
+@media (min-width: 766px) {
+    .head{
+        width: 200px;
+        height: 900px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .info{
+        width: 200px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+    }
+    .info h1{
+        font-size: 30px;
+
+    }
+    .info h2{
+        font-size: 20px;
+    }
+    .icongr{
+        width: 60px;
+        height: 60px;
+    }
+    .add{
+        width: 150px;
+        height: 50px;
+        font-size: 23px;
+    }
+}
+
+/* QUERY DESKTOP */
+@media (min-width: 1024px) {
+    .head{
+        width: 300px;
+        height: 900px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .info{
+        width: 200px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+    }
+    .info h1{
+        font-size: 40px;
+
+    }
+    .info h2{
+        font-size: 25px;
+    }
+    .icongr{
+        width: 80px;
+        height: 80px;
+    }
+    .add{
+        width: 170px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
