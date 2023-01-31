@@ -1,0 +1,120 @@
+.containerRegister {
+  margin: auto;
+  padding: 5px 15px 0;
+  max-width: 450px;
+  align-content: center;
+  margin-top: 10px;
+  background: rgb(215, 43, 127);
+  background: linear-gradient(
+    180deg,
+    rgba(215, 43, 127, 1),
+    rgba(255, 51, 75, 1),
+    rgba(151, 30, 208, 1)
+  );
+  border-radius: 30px;
+}
+
+/*boton registro*/
+
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #000;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 46px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(2.3em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(7em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+/*inpus formulario*/
+
+.input {
+  display: block;
+  background-color: #212121;
+  width: 100%;
+  height: 40px;
+  padding: 10px ;
+  /* text-align: center; */
+  border: 2px solid white;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.input:focus {
+  color: rgb(255, 0, 179);
+  background-color: #212121;
+  outline-color: rgb(255, 1, 255);
+  box-shadow: -3px -3px 15px rgb(182, 0, 158);
+  transition: 0.1s;
+  transition-property: box-shadow;
+}
+
+.olvidar {
+    color: #fff;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 15px;
+}
+
+
+@media only screen and (max-width: 420px) {
+  .containerRegister {
+    margin: auto;
+    padding: 15px;
+    width: 290px;
+    align-content: center;
+    margin-top: 120px;
+    background: rgb(215, 43, 127);
+    background: linear-gradient(
+      180deg,
+      rgba(215, 43, 127, 1),
+      rgba(255, 51, 75, 1),
+      rgba(151, 30, 208, 1)
+    );
+    border-radius: 30px;
+  }
+}

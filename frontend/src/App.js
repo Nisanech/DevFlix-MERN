@@ -19,6 +19,7 @@ import Header from "./components/Header/Header";
 // Estilos
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import ListMovies from "./components/ListMovies/ListMovies";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* <Header /> */}
-
+        <ListMovies/>
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />

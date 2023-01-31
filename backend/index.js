@@ -14,6 +14,9 @@ const connectDB = require("./mongoDB");
 // Importar archivo con las rutas del usuario
 const userRoute = require("./routes/userRoute");
 
+//Import file movies
+const fileMovies = require("./routes/moviesRoute");
+
 // Inicializar el servidor de express
 const app = express();
 
@@ -27,6 +30,9 @@ app.use(cors());
 
 // Endpoints
 app.use("/users", userRoute);
+
+// Endpoints movies
+app.use("/movies", fileMovies);
 
 // Usar conexión de la base de datos
 connectDB();
