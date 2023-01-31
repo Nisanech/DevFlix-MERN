@@ -13,7 +13,7 @@ export const login = createAsyncThunk(
 
       toast.success("Ingreso correcto");
 
-      navigate("/");
+      navigate("/home");
 
       return response.data;
     } catch (error) {
@@ -25,20 +25,20 @@ export const login = createAsyncThunk(
 // Función para el registro
 export const register = createAsyncThunk(
   "auth/register",
-  async ({formValue, navigate, toast}, {rejectWithValue}) => {
+  async ({ formValue, navigate, toast }, { rejectWithValue }) => {
     try {
-      const response = await api.signUp(formValue)
+      const response = await api.signUp(formValue);
 
-      toast.success('Registro correcto')
+      toast.success("Registro correcto");
 
-      navigate('/')
+      navigate("/");
 
-      return response.data
+      return response.data;
     } catch (error) {
-      return rejectWithValue(error.response.data)
+      return rejectWithValue(error.response.data);
     }
   }
-)
+);
 // Slice
 const authSlice = createSlice({
   name: "auth",

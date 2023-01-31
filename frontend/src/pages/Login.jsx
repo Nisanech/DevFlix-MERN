@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import './login.css'
+import "./login.css";
 
 // Redux
 import { login } from "../redux/actions/authSlice";
 
 // Estilos
-import { Form, FormGroup, Label, Input, Button, Spinner } from "reactstrap";
+import { Form, FormGroup, Label, Spinner } from "reactstrap";
 
 // Estado inicial
 const initialState = {
@@ -56,9 +56,12 @@ const Login = () => {
         <div className="col-md-12">
           <h1 className="Principal">Iniciar Sesión</h1>
           <FormGroup>
-            <Label className="user-label" for="email">Correo</Label>
+            <Label className="user-label" for="email">
+              Correo
+            </Label>
 
-            <input className="input"
+            <input
+              className="input"
               id="email"
               name="email"
               placeholder="Correo"
@@ -67,15 +70,17 @@ const Login = () => {
               onChange={onInputChange}
               required
             />
-  
           </FormGroup>
         </div>
 
         <div className="col-md-12">
           <FormGroup>
-            <Label className="user-label" for="password">Contraseña</Label>
+            <Label className="user-label" for="password">
+              Contraseña
+            </Label>
 
-            <input className="input"
+            <input
+              className="input"
               id="password"
               name="password"
               placeholder="Contraseña"
@@ -84,19 +89,12 @@ const Login = () => {
               onChange={onInputChange}
               required
             />
-            
-
           </FormGroup>
         </div>
 
         <div className="col-md-12">
-          {/* <Button className='ingresar'>
-            {loading && (
-              <Spinner/>
-            )}
-            Ingresar
-          </Button> */}
           <button className="Ingresar">
+            {loading && <Spinner />}
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
                 <svg
@@ -117,6 +115,10 @@ const Login = () => {
           </button>
         </div>
       </Form>
+
+      <Link to="/register">
+        <p className="olvidar">¿No tienes una cuenta? | Registrate</p>
+      </Link>
     </div>
   );
 };
