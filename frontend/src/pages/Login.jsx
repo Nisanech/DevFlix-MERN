@@ -119,7 +119,7 @@ const Login = () => {
       </Form>
 
       <Link to="/register">
-        <p className="olvidar">¿No tienes una cuenta? | Registrate</p>
+        <p className="olvidar1">¿No tienes una cuenta? | Registrate</p>
       </Link>
     </div>
     </div>
