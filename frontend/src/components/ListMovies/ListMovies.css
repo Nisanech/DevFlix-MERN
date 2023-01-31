@@ -9,7 +9,6 @@
   justify-content: center;
 }
 .container_ListMovies {
-  background-color: black;
   width: 80vw;
   display: flex;
   flex-direction: column;

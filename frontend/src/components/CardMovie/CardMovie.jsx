@@ -4,7 +4,7 @@ import image from "./spiritedaway.png";
 
 const CardMovie = () => {
   return (
-    <div className="card">
+    <div className="card2">
       <h2 className="titleMovie">NOMBRE DE LA PELÍCULA</h2>
       <div className="cardPpal">
         {/* IMAGEN */}
