@@ -1,17 +1,20 @@
+.fondo{
+  background-image: url('./backgroundLogin.png');
+  background-size: cover;
+  background-repeat: repeat-x;
+  height: 100vh;
+  display: flex;
+}
+
 .containerLogin {
-  background: rgb(215, 43, 127);
-  background: linear-gradient(
-    45deg,
-    rgba(215, 43, 127, 1) 85%,
-    rgba(255, 51, 75, 1) 100%,
-    rgba(151, 30, 208, 1) 100%
-  );
+  background-image: linear-gradient(279deg, rgb(0, 66, 255), rgb(235, 0, 27));
   border-radius: 20px;
   margin: auto;
   padding: 15px;
   max-width: 450px;
   align-content: center;
-  margin-top: 120px;
+  opacity:0.9;
+  height: 320px;
 }
 
 label {
@@ -45,7 +48,7 @@ label {
   left: 0;
   right: 0;
   display: flex;
-  padding: 30px;
+  padding: 5px;
 }
 
 .Ingresar {
@@ -127,18 +130,42 @@ button:active {
   }
 @media only screen and (max-width: 420px) {
   .containerLogin {
-    background: rgb(215, 43, 127);
-    background: linear-gradient(
-      45deg,
-      rgba(215, 43, 127, 1) 85%,
-      rgba(255, 51, 75, 1) 100%,
-      rgba(151, 30, 208, 1) 100%
-    );
     border-radius: 20px;
     margin: auto;
     padding: 15px;
     max-width: 280px;
     align-content: center;
-    margin-top: 120px;
+    height: 240px;
   }
+
+  .Principal {
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 0px;
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 18px;
+    background: #000;
+    color: white;
+    padding: 0.3em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 46px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .Ingresar {
+    margin: 0px auto;
+    border-radius: 40px;
+  }
+  
 }

@@ -59,10 +59,11 @@ const Register = () => {
   }
 
   return (
+    <div className='fondo'>
     <div className='containerRegister'>
       <h2 className="Principal">Registrarse</h2>
-      <Form onSubmit={handleSubmit} className='row g-3'>
-        <div className='col-md-6'>
+      <Form onSubmit={handleSubmit} className='row'>
+        <div className='col'>
           <FormGroup>
             <Label for='firstName'>Nombre</Label>
             <input className='input' id='firstName' name='firstName' placeholder='Nombre' type='text' value={firstName} onChange={onInputChange} required />
@@ -108,7 +109,7 @@ const Register = () => {
             )}
             Registrarse
           </Button> */}
-        <button className="Ingresar">
+        <button className="Registrar">
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
                 <svg
@@ -133,6 +134,7 @@ const Register = () => {
       <Link to='/login'>
         <p className='olvidar'>¿Ya tienes una cuenta? | Inicia Sesión</p>
       </Link>
+    </div>
     </div>
   )
 }
