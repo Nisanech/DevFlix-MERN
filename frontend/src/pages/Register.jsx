@@ -1,114 +1,154 @@
 // Dependencias
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
 // Redux
-import {register} from '../redux/actions/authSlice'
+import { register } from "../redux/actions/authSlice";
 
 // Estilos
-import {Form, FormGroup, Label, Input, Button, Spinner} from 'reactstrap'
-import './register.css'
+import { Form, FormGroup, Label, Spinner } from "reactstrap";
+import "./register.css";
 
 // Estado inicial
 const initialState = {
   firstName: "",
   lastName: "",
-  email: '',
-  password: '',
-  confirmPassword: ""
-}
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const Register = () => {
   // Formulario
-  const [formValue, setFormValue] = useState(initialState)
+  const [formValue, setFormValue] = useState(initialState);
 
-  const {loading, error} = useSelector((state) => ({...state.auth}))
+  const { loading, error } = useSelector((state) => ({ ...state.auth }));
 
-  const {email, password, firstName, lastName, confirmPassword} = formValue
+  const { email, password, firstName, lastName, confirmPassword } = formValue;
 
   // Dispatch
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // Navegación
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    error && toast.error(error)
-  }, [error])
+    error && toast.error(error);
+  }, [error]);
 
   // Función para el envío del formulario
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    if(password !== confirmPassword) {
-      return toast.error('La contraseña no coincide')
+    if (password !== confirmPassword) {
+      return toast.error("La contraseña no coincide");
     }
 
-    if(email && password && firstName && lastName && confirmPassword) {
-      dispatch(register({formValue, navigate, toast}))
+    if (email && password && firstName && lastName && confirmPassword) {
+      dispatch(register({ formValue, navigate, toast }));
     }
-  }
+  };
 
   // Función para capturar el valor del input cuando cambie
-  const onInputChange = e => {
-    let {name, value} = e.target
+  const onInputChange = (e) => {
+    let { name, value } = e.target;
 
-    setFormValue({...formValue, [name]: value})
-  }
+    setFormValue({ ...formValue, [name]: value });
+  };
 
   return (
-    <div className='containerRegister'>
+    <div className="containerRegister">
       <h2 className="Principal">Registrarse</h2>
-      <Form onSubmit={handleSubmit} className='row g-3'>
-        <div className='col-md-6'>
+      <Form onSubmit={handleSubmit} className="row g-3">
+        <div className="col-md-6">
           <FormGroup>
-            <Label for='firstName'>Nombre</Label>
-            <input className='input' id='firstName' name='firstName' placeholder='Nombre' type='text' value={firstName} onChange={onInputChange} required />
+            <Label for="firstName">Nombre</Label>
+            <input
+              className="input"
+              id="firstName"
+              name="firstName"
+              placeholder="Nombre"
+              type="text"
+              value={firstName}
+              onChange={onInputChange}
+              required
+            />
           </FormGroup>
         </div>
 
-        <div className='col-md-6'>
+        <div className="col-md-6">
           <FormGroup>
-            <Label for='lastName'>Apellido</Label>
+            <Label for="lastName">Apellido</Label>
 
-            <input className='input'  id='lastName' name='lastName' placeholder='Apellido' type='text' value={lastName} onChange={onInputChange} required />
+            <input
+              className="input"
+              id="lastName"
+              name="lastName"
+              placeholder="Apellido"
+              type="text"
+              value={lastName}
+              onChange={onInputChange}
+              required
+            />
           </FormGroup>
         </div>
 
-        <div className='col-md-12'>
+        <div className="col-md-12">
           <FormGroup>
-            <Label for='email'>Correo</Label>
+            <Label for="email">Correo</Label>
 
-            <input className='input'  id='email' name='email' placeholder='Correo' type='email' value={email} onChange={onInputChange} required />
-          </FormGroup>
-        </div>
-        
-        <div className='col-md-12'>
-          <FormGroup>
-            <Label for='password'>Contraseña</Label>
-
-            <input className='input'  id='password' name='password' placeholder='Contraseña' type='password' value={password} onChange={onInputChange} required />
-          </FormGroup>
-        </div>
-        
-        <div className='col-md-12'>
-          <FormGroup>
-            <Label for='confirmPassword'>Confirmar Contraseña</Label>
-
-            <input className='input'  id='confirmPassword' name='confirmPassword' placeholder='Confirmar contraseña' type='password' value={confirmPassword} onChange={onInputChange} required />
+            <input
+              className="input"
+              id="email"
+              name="email"
+              placeholder="Correo"
+              type="email"
+              value={email}
+              onChange={onInputChange}
+              required
+            />
           </FormGroup>
         </div>
 
-        <div className='col-md-12'>
-          {/* <Button style={{ width: '100%' }}>
-            {loading && (
-              <Spinner/>
-            )}
-            Registrarse
-          </Button> */}
-        <button className="Ingresar">
+        <div className="col-md-12">
+          <FormGroup>
+            <Label for="password">Contraseña</Label>
+
+            <input
+              className="input"
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              type="password"
+              value={password}
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+        </div>
+
+        <div className="col-md-12">
+          <FormGroup>
+            <Label for="confirmPassword">Confirmar Contraseña</Label>
+
+            <input
+              className="input"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirmar contraseña"
+              type="password"
+              value={confirmPassword}
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+        </div>
+
+        <div className="col-md-12">
+          <button className="Ingresar">
+            {loading && <Spinner />}
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
                 <svg
@@ -130,11 +170,11 @@ const Register = () => {
         </div>
       </Form>
 
-      <Link to='/login'>
-        <p className='olvidar'>¿Ya tienes una cuenta? | Inicia Sesión</p>
+      <Link to="/">
+        <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

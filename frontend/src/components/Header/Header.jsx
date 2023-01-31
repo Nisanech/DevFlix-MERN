@@ -25,7 +25,7 @@ const Header = () => {
             <button className='add'> + Agregar </button>
         </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

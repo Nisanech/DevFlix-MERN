@@ -1,16 +1,16 @@
-*{
-    font-size: 12px;
+* {
+  font-size: 12px;
 }
 
 /* TARJETA COMPLETA */
-.card{
-    width: 80%;
-    background-image: linear-gradient(279deg, rgb(0, 66, 255), rgb(235, 0, 27));
-    opacity: 2;
-    text-align: center;
-    padding: 1rem;
-    margin: 2rem  auto;
-    color: white;
+.card {
+  width: 80%;
+  background-image: linear-gradient(279deg, rgb(0, 66, 255), rgb(235, 0, 27));
+  opacity: 2;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem auto;
+  color: white;
 }
 
 .titleMovie{
@@ -18,42 +18,42 @@
     font-size: 1.6rem;
 }
 /* DISTRIBUCION PARTE IMAGEN Y PARTE INFO MOVIE */
-.cardPpal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.cardPpal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
- .imgMovie{
-    width: 14rem;
-    border-radius: 0.4rem;
-    margin: 1rem;
- }
-
-.description{
-    text-align: justify;
-    margin: 1.2rem;
-}
-.buttons button{
-    margin: 0.2rem 0.6rem;
-    border-radius: 5px;
-    padding: 0.6rem 1.4rem; 
-    color: white;
-    background-color: transparent;
-    border: white solid;
+.imgMovie {
+  width: 14rem;
+  border-radius: 0.4rem;
+  margin: 1rem;
 }
 
-.buttons button:hover{
-    transform: scale(1.1);
-    transition: 200ms ease-in-out;
+.description {
+  text-align: justify;
+  margin: 1.2rem;
+}
+.buttons button {
+  margin: 0.2rem 0.6rem;
+  border-radius: 5px;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  background-color: transparent;
+  border: white solid;
 }
 
-.buttons .editButton{
-    color: black;
-    background-color: white;
+.buttons button:hover {
+  transform: scale(1.1);
+  transition: 200ms ease-in-out;
 }
 
-  /* ---MEDIA QUERIE --- */
+.buttons .editButton {
+  color: black;
+  background-color: white;
+}
+
+/* ---MEDIA QUERIE --- */
 
   /* QUERY CELULAR LANDSCAPE Y TABLET */
   @media (min-width:481px) and (max-width:768px) {
