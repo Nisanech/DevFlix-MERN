@@ -8,8 +8,12 @@ import CardMovie from '../components/CardMovie/CardMovie'
 const Home = () => {
   return (
     <>
+    <div className='home'>
       <Header />
-      <CardMovie/>
+      <main>
+      <CardMovie />
+      </main>
+    </div>
       <ListMovies/>
     </>
   )
