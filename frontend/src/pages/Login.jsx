@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "./login.css";
-import logo from "../components/Header/Logo.png"
+import logo from "../components/Header/logoblanco.png"
 
 
 // Redux

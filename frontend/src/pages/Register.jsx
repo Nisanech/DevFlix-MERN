@@ -11,7 +11,7 @@ import { register } from "../redux/actions/authSlice";
 import { Form, FormGroup, Label, Spinner } from "reactstrap";
 import "./register.css";
 
-import logo from "../components/Header/Logo.png";
+import logo from "../components/Header/logoblanco.png";
 
 // Estado inicial
 const initialState = {
