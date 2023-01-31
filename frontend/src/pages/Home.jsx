@@ -1,5 +1,6 @@
 import React from "react";
-import "./Home.css"
+import "./Home.css";
+import Footer from "../components/Footer/Footer";
 
 // Componentes
 import Header from '../components/Header/Header'
@@ -16,6 +17,7 @@ const Home = () => {
       </main>
       <ListMovies/>
     </div>
+    <Footer/>
     </>
   )
 };
