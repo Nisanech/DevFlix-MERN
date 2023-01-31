@@ -22,6 +22,23 @@ export const login = createAsyncThunk(
   }
 );
 
+// Función para el registro
+export const register = createAsyncThunk(
+  "auth/register",
+  async ({formValue, navigate, toast}, {rejectWithValue}) => {
+    try {
+      const response = await api.signUp(formValue)
+
+      toast.success('Registro correcto')
+
+      navigate('/')
+
+      return response.data
+    } catch (error) {
+      return rejectWithValue(error.response.data)
+    }
+  }
+)
 // Slice
 const authSlice = createSlice({
   name: "auth",
@@ -38,6 +55,7 @@ const authSlice = createSlice({
   },
 
   extraReducers: {
+    // Login
     [login.pending]: (state, action) => {
       state.loading = true;
     },
@@ -47,6 +65,20 @@ const authSlice = createSlice({
       state.user = action.payload;
     },
     [login.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+
+    // Register
+    [register.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [register.fulfilled]: (state, action) => {
+      state.loading = false;
+      localStorage.setItem("profile", JSON.stringify({ ...action.payload }));
+      state.user = action.payload;
+    },
+    [register.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
