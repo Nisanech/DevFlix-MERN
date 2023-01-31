@@ -9,6 +9,7 @@ import {register} from '../redux/actions/authSlice'
 
 // Estilos
 import {Form, FormGroup, Label, Input, Button, Spinner} from 'reactstrap'
+import './register.css'
 
 // Estado inicial
 const initialState = {
@@ -58,20 +59,13 @@ const Register = () => {
   }
 
   return (
-    <div style={{
-      margin: "auto",
-      padding: "15px",
-      maxWidth: "450px",
-      alignContent: "center",
-      marginTop: "120px",
-    }}>
-      <h5>Registro</h5>
+    <div className='containerRegister'>
+      <h2 className="Principal">Registrarse</h2>
       <Form onSubmit={handleSubmit} className='row g-3'>
         <div className='col-md-6'>
           <FormGroup>
             <Label for='firstName'>Nombre</Label>
-
-            <Input id='firstName' name='firstName' placeholder='Nombre' type='text' value={firstName} onChange={onInputChange} required />
+            <input className='input' id='firstName' name='firstName' placeholder='Nombre' type='text' value={firstName} onChange={onInputChange} required />
           </FormGroup>
         </div>
 
@@ -79,7 +73,7 @@ const Register = () => {
           <FormGroup>
             <Label for='lastName'>Apellido</Label>
 
-            <Input id='lastName' name='lastName' placeholder='Apellido' type='text' value={lastName} onChange={onInputChange} required />
+            <input className='input'  id='lastName' name='lastName' placeholder='Apellido' type='text' value={lastName} onChange={onInputChange} required />
           </FormGroup>
         </div>
 
@@ -87,7 +81,7 @@ const Register = () => {
           <FormGroup>
             <Label for='email'>Correo</Label>
 
-            <Input id='email' name='email' placeholder='Correo' type='email' value={email} onChange={onInputChange} required />
+            <input className='input'  id='email' name='email' placeholder='Correo' type='email' value={email} onChange={onInputChange} required />
           </FormGroup>
         </div>
         
@@ -95,7 +89,7 @@ const Register = () => {
           <FormGroup>
             <Label for='password'>Contraseña</Label>
 
-            <Input id='password' name='password' placeholder='Contraseña' type='password' value={password} onChange={onInputChange} required />
+            <input className='input'  id='password' name='password' placeholder='Contraseña' type='password' value={password} onChange={onInputChange} required />
           </FormGroup>
         </div>
         
@@ -103,22 +97,41 @@ const Register = () => {
           <FormGroup>
             <Label for='confirmPassword'>Confirmar Contraseña</Label>
 
-            <Input id='confirmPassword' name='confirmPassword' placeholder='Confirmar contraseña' type='password' value={confirmPassword} onChange={onInputChange} required />
+            <input className='input'  id='confirmPassword' name='confirmPassword' placeholder='Confirmar contraseña' type='password' value={confirmPassword} onChange={onInputChange} required />
           </FormGroup>
         </div>
 
         <div className='col-md-12'>
-          <Button style={{ width: '100%' }}>
+          {/* <Button style={{ width: '100%' }}>
             {loading && (
               <Spinner/>
             )}
             Registrarse
-          </Button>
+          </Button> */}
+        <button className="Ingresar">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span>Registrarse</span>
+          </button>
         </div>
       </Form>
 
       <Link to='/login'>
-        <p>¿Ya tienes una cuenta? | Inicia Sesión</p>
+        <p className='olvidar'>¿Ya tienes una cuenta? | Inicia Sesión</p>
       </Link>
     </div>
   )
