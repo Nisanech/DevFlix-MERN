@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Header.css"
 import { CiUser } from 'react-icons/ci';
-import img from "./Logo.png";
+import img from "./logoblanco.png";
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
             
         <div className='conta'>
                 <div className='logo'>
-                    <img className="logoDevflix"src={img} alt="" srcset="" />
+                    <img className="logoDevflix"src={img} alt="imagen logo peliculas" srcset="" />
                 </div>
             
             <div className='info'>
