@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "./login.css";
+import logo from "../components/Header/logoblanco.png"
 
 
 // Redux
@@ -53,6 +54,7 @@ const Login = () => {
   };
   return (
     <div className="fondo">
+      <img className="logodev" src={logo} alt="logo peliculas" />
     <div className="containerLogin">
       <Form onSubmit={handleSubmit} className="rowLogin">
         <div className="colLogin">
@@ -119,7 +121,7 @@ const Login = () => {
       </Form>
 
       <Link to="/register">
-        <p className="olvidar">¿No tienes una cuenta? | Registrate</p>
+        <p className="olvidar1">¿No tienes una cuenta? | Registrate</p>
       </Link>
     </div>
     </div>
