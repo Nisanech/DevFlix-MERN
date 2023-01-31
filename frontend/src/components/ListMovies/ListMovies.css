@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Saira:wght@600&display=swap");
+:root {
+  --titleText: "Quicksand", sans-serif;
+  --text: "Saira", sans-serif;
+}
+.general-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_ListMovies {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name-filter_ListMovies {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+}
+
+.name-filter_ListMovies p {
+  font-family: var(--titleText);
+  font-size: 4vw;
+  font-weight: 100;
+}
+.name-filter_ListMovies select {
+  max-width: 40vw;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 0 10px;
+  color: grey;
+  font-family: var(--titleText);
+}
+.card {
+  margin: 10px;
+  padding: 5px;
+  width: 50vw;
+}
+.card img {
+  width: 95%;
+  margin: 2vw auto 0 auto;
+}
+.card button {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,66,255,0.5) 0%, rgba(235,0,27,0.5) 100%);
+  border: none;  
+  font-family: var(--titleText);
+  font-size: 2.5vw;
+}
+.card-title {
+  color: white;
+  font-family: var(--titleText); 
+  font-size: 4vw; 
+}
+.card h6 {
+  color: white; 
+  font-family: var(--titleText);
+  font-size: 3vw; 
+}
+.text-muted {
+  color: white;
+}
+
+@media screen and (min-width: 575px) {
+  .container_ListMovies {
+    width: 60vw;
+  }
+  .name-filter_ListMovies {
+    width: 50vw;
+  }
+  .name-filter_ListMovies p {
+    font-size: 2vw;
+  }
+  .card {
+    width: 18vw;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+  }
+  .card img {
+    margin: 5px auto 0 auto;
+  }
+  .container_movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    align-items: center;
+    justify-content: center;
+  }
+  .card-title {
+    font-size: 1.2vw;
+  }
+  .card h6 {
+    font-size: 1vw;
+  }
+  .card button {    
+    font-size: 1vw;
+  }
+
+}

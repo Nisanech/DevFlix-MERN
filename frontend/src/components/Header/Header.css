@@ -2,34 +2,38 @@
     background-color: #131313;
     color: white;
     width: 100%;
-    height: 100px;
+    height: 6rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    position: relative;
+    top: 0;
+    z-index: 1;
 }
 
-.info {}
-
+.logoDevflix{
+    width: 60%;
+    margin-left: 0rem;
+}
 .info h1 {
-    font-size: 20px;
-    margin: 0px;
-
+  font-size: 1rem;
+  margin: 0px;
 }
 
 .info h2 {
-    font-size: 15px;
+  font-size: 0.9rem;
 }
 
 .icongr {
-
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
 }
 
 .add {
+<<<<<<< HEAD
     background: linear-gradient(90deg, rgba(0, 21, 142, 1) 0%, rgba(187, 14, 14, 1) 100%);
     border-radius: 50px;
     width: 110px;
@@ -37,27 +41,38 @@
     border: none;
     color: white;
     
+=======
+  background: linear-gradient(
+    90deg,
+    rgba(0, 21, 142, 1) 0%,
+    rgba(187, 14, 14, 1) 100%
+  );
+  border-radius: 50px;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  color: white;
+>>>>>>> 6999f3f21464c505a24f1d446951c13096b0a4ed
 }
 
 .add:hover {
-    background: linear-gradient(90deg, rgba(0, 21, 142, 0.692) 0%, rgba(187, 14, 14, 0.678) 100%);
-    color: white;
-    font-weight: 600;
-}
-
-/* QUERY CELULAR */
-@media (max-width: 481px) {
-    
+  background: linear-gradient(
+    90deg,
+    rgba(0, 21, 142, 0.692) 0%,
+    rgba(187, 14, 14, 0.678) 100%
+  );
+  color: white;
+  font-weight: 600;
 }
 
 /* QUERY TABLET */
 @media (min-width: 766px) {
     .head{
-        width: 200px;
-        height: 900px;
-        flex-direction: column;
+        width:100%;
+        height: 10vh;
         justify-content: flex-start;
     }
+    
     .info{
         width: 200px;
         height: 80px;
@@ -88,9 +103,8 @@
 /* QUERY DESKTOP */
 @media (min-width: 1024px) {
     .head{
-        width: 300px;
-        height: 900px;
-        flex-direction: column;
+        width: 100%;
+        height: 15vh;
         justify-content: flex-start;
     }
     .info{
