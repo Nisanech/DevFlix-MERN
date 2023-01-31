@@ -13,6 +13,10 @@
     color: white;
 }
 
+.titleMovie{
+    margin: 1rem;
+    font-size: 1.6rem;
+}
 /* DISTRIBUCION PARTE IMAGEN Y PARTE INFO MOVIE */
 .cardPpal{
     display: flex;
@@ -59,6 +63,10 @@
     .card{
         width: 90%;
     }
+    .titleMovie{
+        margin: 1.3rem;
+        font-size: 2.3rem;
+    }
     .cardPpal{
         display: flex;
         flex-direction: row;
@@ -84,7 +92,10 @@
     }
     .card{
         width: 90%;
-
+    }
+    .titleMovie{
+        margin: 1.4rem;
+        font-size: 2.6rem;
     }
     .cardPpal{
         display: flex;
@@ -106,6 +117,7 @@
     *{
         font-size: 20px;
     }
+
     .cardPpal{
         display: flex;
         flex-direction: row;
