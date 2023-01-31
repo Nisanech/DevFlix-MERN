@@ -4,7 +4,7 @@ import { CiUser } from 'react-icons/ci';
 import img from "./Logo.png";
 
 const Header = () => {
-  return (
+return (
     <header className='head'> 
             
         <div className='conta'>
@@ -28,7 +28,7 @@ const Header = () => {
             </div>
         </div>
     </header>
-  );
+);
 };
 
 export default Header;
