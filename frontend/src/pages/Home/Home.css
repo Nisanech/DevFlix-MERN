@@ -1,0 +1,8 @@
+
+main{
+    z-index: 1;
+}
+.footerHome{
+    position:absolute;
+    bottom: 0;
+}
