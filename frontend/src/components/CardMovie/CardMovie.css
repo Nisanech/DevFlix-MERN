@@ -13,6 +13,10 @@
   color: white;
 }
 
+.titleMovie{
+    margin: 1rem;
+    font-size: 1.6rem;
+}
 /* DISTRIBUCION PARTE IMAGEN Y PARTE INFO MOVIE */
 .cardPpal {
   display: flex;
@@ -51,39 +55,76 @@
 
 /* ---MEDIA QUERIE --- */
 
-/* QUERY CELULAR LANDSCAPE Y TABLET */
-@media (min-width: 481px) {
-  * {
-    font-size: 16px;
+  /* QUERY CELULAR LANDSCAPE Y TABLET */
+  @media (min-width:481px) and (max-width:768px) {
+    *{
+        font-size: 12px;
+    }
+    .card{
+        width: 90%;
+    }
+    .titleMovie{
+        margin: 1.3rem;
+        font-size: 2.3rem;
+    }
+    .cardPpal{
+        display: flex;
+        flex-direction: row;
+    }
+    .imgMovie{
+        max-width: 90%;
+     }
+     .infoMovie{
+        display: flex;
+        text-align: left;
+        gap: 20px;
+        margin: 1.2rem;
+     }
+     .sideInfo{
+        max-width: 60%;
+     }
   }
-  .card {
-    width: 90%;
-  }
-  .cardPpal {
-    display: flex;
-    flex-direction: row;
-  }
-  .imgMovie {
-    width: 15rem;
-  }
-  .infoMovie {
-    display: flex;
-    text-align: left;
-    gap: 20px;
-    margin: 1.2rem;
-  }
-}
+  
+  @media (min-width:769px) {
+    *{
+        font-size: 16px;
 
-/* QUERY DESKTOP */
-@media (min-width: 1023px) {
-  * {
-    font-size: 20px;
+    }
+    .card{
+        width: 90%;
+    }
+    .titleMovie{
+        margin: 1.4rem;
+        font-size: 2.6rem;
+    }
+    .cardPpal{
+        display: flex;
+        flex-direction: row;
+    }
+    .imgMovie{
+        width: 15rem;
+     }
+     .infoMovie{
+        display: flex;
+        text-align: left;
+        gap: 20px;
+        margin: 1.2rem;
+     }
+
   }
-  .cardPpal {
-    display: flex;
-    flex-direction: row;
-  }
-  .imgMovie {
-    width: 15rem;
-  }
+  /* QUERY DESKTOP */
+  @media (min-width: 1023px) {
+    *{
+        font-size: 20px;
+    }
+
+    .cardPpal{
+        display: flex;
+        flex-direction: row;
+    }
+    .imgMovie{
+        width: 15rem;
+     }
+
+
 }
