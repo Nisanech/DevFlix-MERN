@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css"
 
 // Componentes
 import Header from '../components/Header/Header'
@@ -13,8 +14,8 @@ const Home = () => {
       <main>
       <CardMovie />
       </main>
-    </div>
       <ListMovies/>
+    </div>
     </>
   )
 };
