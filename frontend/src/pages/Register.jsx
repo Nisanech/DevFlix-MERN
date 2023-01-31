@@ -59,10 +59,11 @@ const Register = () => {
   };
 
   return (
-    <div className="containerRegister">
+    <div className='fondo'>
+    <div className='containerRegister'>
       <h2 className="Principal">Registrarse</h2>
-      <Form onSubmit={handleSubmit} className="row g-3">
-        <div className="col-md-6">
+      <Form onSubmit={handleSubmit} className='row'>
+        <div className='col'>
           <FormGroup>
             <Label for="firstName">Nombre</Label>
             <input
@@ -147,7 +148,7 @@ const Register = () => {
         </div>
 
         <div className="col-md-12">
-          <button className="Ingresar">
+          <button className="Registrar">
             {loading && <Spinner />}
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
@@ -173,6 +174,7 @@ const Register = () => {
       <Link to="/">
         <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
       </Link>
+    </div>
     </div>
   );
 };
