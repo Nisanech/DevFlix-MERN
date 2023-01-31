@@ -1,0 +1,13 @@
+
+.home{
+    z-index: 1;
+    background-image: url("./img/backgrounddashboard.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+    
+    height: 100%;
+}
+.footerHome{
+    position:absolute;
+    bottom: 0;
+}
