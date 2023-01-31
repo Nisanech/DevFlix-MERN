@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .imgMovie {
@@ -70,12 +71,9 @@
 /* ---MEDIA QUERIE --- */
 
   /* QUERY CELULAR LANDSCAPE Y TABLET */
-  @media (min-width:481px) {
-    *{
-        font-size: 12px;
-    }
+  @media screen and (min-width:768px) and (max-width:978px) {
     .card2{
-        width: 70%;
+        width: 80vw;
     }
     .titleMovie{
         margin: 1.3rem;
@@ -90,9 +88,13 @@
       font-size: 1.3rem;
     }
     
-    .card2 img{
-      width: 65%;
-  }
+    .sideImg{
+      justify-content: flex-end;
+      display: flex;
+      width: 40vw;
+
+    }
+    
      .infoMovie{
         display: flex;
         text-align: left;
@@ -100,55 +102,50 @@
         margin: 1.2rem;
      }
      .sideInfo{
-        max-width: 60%;
+      width: 60vw;
      }
   }
-  
-  @media (min-width:769px) and (max-width:1022px){
-    *{
-        font-size: 16px;
-    }
+  @media screen and (min-width:979px){
     .card2{
-        width: 70%;
-    }
-
-    .card2 img{
-      width: 65%;
+      width: 55vw;
   }
-    .titleMovie{
-        margin: 1.4rem;
-        font-size: 2.6rem;
-    }
-    .cardPpal{
-        display: flex;
-        flex-direction: row;
-    }
-    .imgMovie{
-        width: 15rem;
-     }
-     .infoMovie{
-        display: flex;
-        text-align: left;
-        gap: 20px;
-        margin: 1.2rem;
-     }
+  .titleMovie{
+    margin: 1.3rem;
+    font-size: 2.3rem;
+}
+.cardPpal{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+.description{
+  padding: 0 4vw;
+}
+.buttons button {
+  width: 15%;
+  font-size: 1.3rem;
+}
 
-  }
-  /* QUERY DESKTOP */
-  @media (min-width: 1023px) {
-    *{
-        font-size: 20px;
-    }
-    .card2 img{
-      width: 28%;
-  }
-    .cardPpal{
-        display: flex;
-        flex-direction: row;
-    }
-    .imgMovie{
-        width: 15rem;
-     }
-
+.sideImg{
+  justify-content: center;
+  display: flex;
+  width: 40vw;
 
 }
+
+ .infoMovie{
+    display: flex;
+    text-align: left;
+    gap: 20px;
+    margin: 1.2rem;
+ }
+ .sideInfo{
+  width: 60vw;
+ }
+
+}
+
+
+
+
+
