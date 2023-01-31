@@ -17,6 +17,7 @@ export default function ListMovies(second) {
   return (
     <>
       <div className="general-container">
+
         <div className="container_ListMovies">
           <div className="name-filter_ListMovies">
             <p style={{ margin: "0" }}>Todas las películas</p>
@@ -44,8 +45,9 @@ export default function ListMovies(second) {
             <Card
               style={{
                 backgroundColor: "transparent",
-                borderWidth: "3px",
-                borderStyle: "solid",
+                borderWidth: "1px",
+                borderStyle: "solid" ,
+                borderColor:"purple"              
               }}
             >
               <CardImg alt="Card image cap" src={imgprueba} />
@@ -66,7 +68,17 @@ export default function ListMovies(second) {
                 <Button onClick={GetMovieInformation}>Ver más</Button>
               </CardBody>
             </Card>
-            <Card>
+
+            {/* CARD EXAMPLES (DELETE WHEN MAP THE RESPONSE OF MONGO) */}
+
+            <Card
+              style={{
+                backgroundColor: "transparent",
+                borderWidth: "1px",
+                borderStyle: "solid" ,
+                borderColor:"purple"              
+              }}
+            >
               <CardImg alt="Card image cap" src={imgprueba} />
               <CardBody>
                 <CardTitle tag="h5">Movie title</CardTitle>
@@ -85,7 +97,14 @@ export default function ListMovies(second) {
                 <Button onClick={GetMovieInformation}>Ver más</Button>
               </CardBody>
             </Card>
-            <Card>
+            <Card
+              style={{
+                backgroundColor: "transparent",
+                borderWidth: "1px",
+                borderStyle: "solid" ,
+                borderColor:"purple"              
+              }}
+            >
               <CardImg alt="Card image cap" src={imgprueba} />
               <CardBody>
                 <CardTitle tag="h5">Movie title</CardTitle>
@@ -103,47 +122,10 @@ export default function ListMovies(second) {
                 </CardSubtitle>
                 <Button onClick={GetMovieInformation}>Ver más</Button>
               </CardBody>
-            </Card>
-            <Card>
-              <CardImg alt="Card image cap" src={imgprueba} />
-              <CardBody>
-                <CardTitle tag="h5">Movie title</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Año:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Director:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Reparto:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Calificación:
-                </CardSubtitle>
-                <Button onClick={GetMovieInformation}>Ver más</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardImg alt="Card image cap" src={imgprueba} />
-              <CardBody>
-                <CardTitle tag="h5">Movie title</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Año:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Director:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Reparto:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Calificación:
-                </CardSubtitle>
-                <Button onClick={GetMovieInformation}>Ver más</Button>
-              </CardBody>
-            </Card>
+            </Card>            
           </div>
         </div>
+        
       </div>
     </>
   );
