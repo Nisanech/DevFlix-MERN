@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import "./login.css";
 
+
 // Redux
 import { login } from "../redux/actions/authSlice";
 
@@ -51,9 +52,10 @@ const Login = () => {
     setFormValue({ ...formValue, [name]: value });
   };
   return (
-    <div className="containerLogin" style={{}}>
-      <Form onSubmit={handleSubmit} className="row g-3">
-        <div className="col-md-12">
+    <div className="fondo">
+    <div className="containerLogin">
+      <Form onSubmit={handleSubmit} className="rowLogin">
+        <div className="colLogin">
           <h1 className="Principal">Iniciar Sesión</h1>
           <FormGroup>
             <Label className="user-label" for="email">
@@ -117,8 +119,9 @@ const Login = () => {
       </Form>
 
       <Link to="/register">
-        <p className="olvidar">¿No tienes una cuenta? | Registrate</p>
+        <p className="olvidar1">¿No tienes una cuenta? | Registrate</p>
       </Link>
+    </div>
     </div>
   );
 };
