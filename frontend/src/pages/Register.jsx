@@ -128,6 +128,7 @@ const Register = () => {
             </div>
             <span>Registrarse</span>
           </button>
+          <img src="" alt="" />
         </div>
       </Form>
 
