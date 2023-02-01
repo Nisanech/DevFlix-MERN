@@ -78,11 +78,11 @@ const Header = () => {
             + Agregar
           </Button>
           <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Agregar Película</ModalHeader>
+            <ModalHeader toggle={toggle}>Agregar Película</ModalHeader><br/>
 
             <Form onSubmit={onFormSubmit}>
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText" >
                   Título Película
                 </Label>
                 <Input
@@ -97,7 +97,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText">
                   Director
                 </Label>
                 <Input
@@ -109,7 +109,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText">
                   Año
                 </Label>
                 <Input
@@ -121,7 +121,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleDate" style={{ color: "black" }}>
+                <Label for="exampleDate">
                   Estreno
                 </Label>
                 <Input
@@ -133,7 +133,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText">
                   Reparto
                 </Label>
                 <Input
@@ -145,7 +145,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect" style={{ color: "black" }}>
+                <Label for="exampleSelect">
                   Idioma
                 </Label>
                 <Input id="exampleSelect" name="select" type="select">
@@ -158,7 +158,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect" style={{ color: "black" }}>
+                <Label for="exampleSelect">
                   País
                 </Label>
                 <Input id="exampleSelect" name="select" type="select">
@@ -171,7 +171,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect" style={{ color: "black" }}>
+                <Label for="exampleSelect">
                   Género
                 </Label>
                 <Input id="exampleSelect" name="select" type="select">
@@ -192,7 +192,7 @@ const Header = () => {
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText">
                   Duración
                 </Label>
                 <Input
@@ -201,11 +201,11 @@ const Header = () => {
                   type="number"
                   placeholder="Duración de la película"
                 />
-                <FormText>Duración en minutos</FormText>
+                <FormText style={{color: "black"}}>Duración en minutos</FormText>
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleText" style={{ color: "black" }}>
+                <Label for="exampleText">
                   Descripción
                 </Label>
                 <Input
