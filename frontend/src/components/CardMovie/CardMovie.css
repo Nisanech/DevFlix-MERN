@@ -73,7 +73,7 @@
   /* QUERY CELULAR LANDSCAPE Y TABLET */
   @media screen and (min-width:768px) and (max-width:978px) {
     .card2{
-        width: 80vw;
+        width: 85vw;
     }
     .titleMovie{
         margin: 1.3rem;
@@ -87,14 +87,11 @@
       width: 20%;
       font-size: 1.3rem;
     }
-    
     .sideImg{
       justify-content: flex-end;
       display: flex;
       width: 40vw;
-
     }
-    
      .infoMovie{
         display: flex;
         text-align: left;
@@ -106,9 +103,6 @@
      }
   }
   @media screen and (min-width:979px){
-    .card2{
-      width: 55vw;
-  }
   .titleMovie{
     margin: 1.3rem;
     font-size: 2.3rem;
@@ -120,6 +114,9 @@
 }
 .description{
   padding: 0 4vw;
+}
+.movie-input .edit{
+  margin: 20px;
 }
 .buttons button {
   width: 15%;
