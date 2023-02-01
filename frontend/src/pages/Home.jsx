@@ -1,10 +1,11 @@
 import React from "react";
+import "./Home.css"
 
 // Componentes
 import Header from '../components/Header/Header'
 import ListMovies from '../components/ListMovies/ListMovies'
 import CardMovie from '../components/CardMovie/CardMovie'
-
+import Footer from '../components/Footer/Footer'
 const Home = () => {
   return (
     <>
@@ -13,8 +14,9 @@ const Home = () => {
       <main>
       <CardMovie />
       </main>
-    </div>
       <ListMovies/>
+    </div>
+    <Footer/>
     </>
   )
 };

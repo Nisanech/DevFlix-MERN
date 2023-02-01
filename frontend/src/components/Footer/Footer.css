@@ -3,12 +3,14 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
+    margin: 0;
   }
   
   footer ul {
     display: flex;
     padding: 1.8rem;
     justify-content: center;
+    margin: 0;
   }
   
   footer ul li {
@@ -50,13 +52,13 @@ footer {
   /* QUERY DESKTOP */
   @media (min-width: 1201px) {
     footer ul {
-      padding: 0.2rem;
+      padding: 0.3rem;
     }
     footer ul li {
       list-style-type: none;
       margin: 0rem 0.1rem;
     }
     footer ul li img {
-      height: 2rem;
+      height: 5rem;
     }
   }

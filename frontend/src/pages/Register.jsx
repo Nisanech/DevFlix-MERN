@@ -11,6 +11,8 @@ import { register } from "../redux/actions/authSlice";
 import { Form, FormGroup, Label, Spinner } from "reactstrap";
 import "./register.css";
 
+import logo from "../components/Header/logoblanco.png";
+
 // Estado inicial
 const initialState = {
   firstName: "",
@@ -59,122 +61,125 @@ const Register = () => {
   };
 
   return (
-    <div className='fondo'>
-    <div className='containerRegister'>
-      <h2 className="Principal">Registrarse</h2>
-      <Form onSubmit={handleSubmit} className='row'>
-        <div className='col'>
-          <FormGroup>
-            <Label for="firstName">Nombre</Label>
-            <input
-              className="input"
-              id="firstName"
-              name="firstName"
-              placeholder="Nombre"
-              type="text"
-              value={firstName}
-              onChange={onInputChange}
-              required
-            />
-          </FormGroup>
-        </div>
+    <div className="fondo">
+      <img className="logodev" src={logo} alt="logo peliculas" />
 
-        <div className="col-md-6">
-          <FormGroup>
-            <Label for="lastName">Apellido</Label>
+      <div className="containerRegister">
+        <h2 className="Principal">Registrarse</h2>
+        <Form onSubmit={handleSubmit} className="row">
+          <div className="col">
+            <FormGroup>
+              <Label for="firstName">Nombre</Label>
+              <input
+                className="input"
+                id="firstName"
+                name="firstName"
+                placeholder="Nombre"
+                type="text"
+                value={firstName}
+                onChange={onInputChange}
+                required
+              />
+            </FormGroup>
+          </div>
 
-            <input
-              className="input"
-              id="lastName"
-              name="lastName"
-              placeholder="Apellido"
-              type="text"
-              value={lastName}
-              onChange={onInputChange}
-              required
-            />
-          </FormGroup>
-        </div>
+          <div className="col-md-6">
+            <FormGroup>
+              <Label for="lastName">Apellido</Label>
 
-        <div className="col-md-12">
-          <FormGroup>
-            <Label for="email">Correo</Label>
+              <input
+                className="input"
+                id="lastName"
+                name="lastName"
+                placeholder="Apellido"
+                type="text"
+                value={lastName}
+                onChange={onInputChange}
+                required
+              />
+            </FormGroup>
+          </div>
 
-            <input
-              className="input"
-              id="email"
-              name="email"
-              placeholder="Correo"
-              type="email"
-              value={email}
-              onChange={onInputChange}
-              required
-            />
-          </FormGroup>
-        </div>
+          <div className="col-md-12">
+            <FormGroup>
+              <Label for="email">Correo</Label>
 
-        <div className="col-md-12">
-          <FormGroup>
-            <Label for="password">Contraseña</Label>
+              <input
+                className="input"
+                id="email"
+                name="email"
+                placeholder="Correo"
+                type="email"
+                value={email}
+                onChange={onInputChange}
+                required
+              />
+            </FormGroup>
+          </div>
 
-            <input
-              className="input"
-              id="password"
-              name="password"
-              placeholder="Contraseña"
-              type="password"
-              value={password}
-              onChange={onInputChange}
-              required
-            />
-          </FormGroup>
-        </div>
+          <div className="col-md-12">
+            <FormGroup>
+              <Label for="password">Contraseña</Label>
 
-        <div className="col-md-12">
-          <FormGroup>
-            <Label for="confirmPassword">Confirmar Contraseña</Label>
+              <input
+                className="input"
+                id="password"
+                name="password"
+                placeholder="Contraseña"
+                type="password"
+                value={password}
+                onChange={onInputChange}
+                required
+              />
+            </FormGroup>
+          </div>
 
-            <input
-              className="input"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirmar contraseña"
-              type="password"
-              value={confirmPassword}
-              onChange={onInputChange}
-              required
-            />
-          </FormGroup>
-        </div>
+          <div className="col-md-12">
+            <FormGroup>
+              <Label for="confirmPassword">Confirmar Contraseña</Label>
 
-        <div className="col-md-12">
-          <button className="Registrar">
-            {loading && <Spinner />}
-            <div class="svg-wrapper-1">
-              <div class="svg-wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                >
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                  <path
-                    fill="currentColor"
-                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                  ></path>
-                </svg>
+              <input
+                className="input"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirmar contraseña"
+                type="password"
+                value={confirmPassword}
+                onChange={onInputChange}
+                required
+              />
+            </FormGroup>
+          </div>
+
+          <div className="col-md-12">
+            <button className="Registrar">
+              {loading && <Spinner />}
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
               </div>
-            </div>
-            <span>Registrarse</span>
-          </button>
-        </div>
-      </Form>
+              <span>Registrarse</span>
+            </button>
+            <img src="" alt="" />
+          </div>
+        </Form>
 
-      <Link to="/">
-        <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
-      </Link>
-    </div>
+        <Link to="/">
+          <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
+        </Link>
+      </div>
     </div>
   );
 };

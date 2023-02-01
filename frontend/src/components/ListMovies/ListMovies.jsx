@@ -47,7 +47,7 @@ export default function ListMovies(second) {
                 backgroundColor: "transparent",
                 borderWidth: "1px",
                 borderStyle: "solid" ,
-borderColor:"purple"              
+                borderColor:"purple"              
               }}
             >
               <CardImg alt="Card image cap" src={imgprueba} />
