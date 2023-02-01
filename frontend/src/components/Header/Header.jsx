@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { CiUser } from "react-icons/ci";
 import img from "./logoblanco.png";
-import file from "react-file-base64";
+import File from "react-file-base64";
 import { toast } from "react-toastify";
 
 import { useState, useEffect } from "react";
@@ -66,6 +66,9 @@ const Header = () => {
     rating 
   } = movieData
 
+  useEffect(()=>{
+    error && toast.error(error)
+  },[error])
   // Función para enviar el formulario al agregar una nueva tarea
   const onFormSubmit = (e) => {
     // Previene el evento por defecto del elemento
@@ -86,22 +89,23 @@ const Header = () => {
         )   
         {
         const updateMovieData = {...movieData}
-        dispatch(createMovie(updateMovieData, toast));
+        dispatch(createMovies(updateMovieData, toast));
         
         handleClear()
       }
-
-      
-    // Se dispara la acción del reducer para agregar la tarea recibiendo la información o nombre de la tarea
-    dispatch(addNewMovie(text));
-
-    // Valor por defecto del estado
-    setText("");
   };
+
   // Evento para capturar cuando el valor del input cambie
   const onInputChange = (e) => {
-    setText(e.target.value);
+    const {name, value} = e.target
+    setMovieData({
+      ...movieData, [name]:value
+    })
   };
+
+  const handleClear = () =>{
+    setMovieData (initialState)
+  }
 
   //Use state para activación de la ventana modal
   const [modal, setModal] = useState(false);
@@ -143,12 +147,11 @@ const Header = () => {
                   Título Película
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
+                  name="mov_title"
                   type="text"
                   placeholder="Título"
                   onChange={onInputChange}
-                  value={text}
+                  value={mov_title}
                   required
                 />
               </FormGroup>
@@ -158,10 +161,12 @@ const Header = () => {
                   Director
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
+                  name="director"
                   type="text"
                   placeholder="Director"
+                  onChange={onInputChange}
+                  value={director}
+                  required
                 />
               </FormGroup>
 
@@ -170,10 +175,12 @@ const Header = () => {
                   Año
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
-                  type="number"
+                  name="mov_year"
+                  type="text"
                   placeholder="Año"
+                  onChange={onInputChange}
+                  value={mov_year}
+                  required
                 />
               </FormGroup>
 
@@ -182,10 +189,12 @@ const Header = () => {
                   Estreno
                 </Label>
                 <Input
-                  id="exampleDate"
-                  name="date"
-                  placeholder="Estreno"
-                  type="date"
+                   name="mov_dt_rel"
+                   type="date"
+                   placeholder="Estreno"
+                   onChange={onInputChange}
+                   value={mov_dt_rel}
+                   required
                 />
               </FormGroup>
 
@@ -194,58 +203,55 @@ const Header = () => {
                   Reparto
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
+                  name="actors"
                   type="text"
                   placeholder="Reparto"
+                  onChange={onInputChange}
+                  value={actors}
+                  required
                 />
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect">
+                <Label for="exampleText">
                   Idioma
                 </Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>Español</option>
-                  <option>Inglés</option>
-                  <option>Alemán</option>
-                  <option>Ruso</option>
-                  <option>Mandarín</option>
-                </Input>
+                <Input
+                  name="mov_lang"
+                  type="text"
+                  placeholder="Idioma"
+                  onChange={onInputChange}
+                  value={mov_lang}
+                  required
+                />
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect">
+                <Label for="exampleText">
                   País
                 </Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>Inglaterra</option>
-                  <option>Estados Unidos</option>
-                  <option>Francia</option>
-                  <option>China</option>
-                  <option>Otros</option>
-                </Input>
+                <Input
+                  name="mov_rel_country"
+                  type="text"
+                  placeholder="País"
+                  onChange={onInputChange}
+                  value={mov_rel_country}
+                  required
+                />
               </FormGroup>
 
               <FormGroup>
-                <Label for="exampleSelect">
+                <Label for="exampleText">
                   Género
                 </Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>Drama</option>
-                  <option>Misterio</option>
-                  <option>Acción</option>
-                  <option>Musical</option>
-                  <option>Fantástico</option>
-                  <option>Suspenso</option>
-                  <option>Aventura</option>
-                  <option>Romance</option>
-                  <option>Crimen</option>
-                  <option>Animación</option>
-                  <option>Comedia</option>
-                  <option>Thriller</option>
-                  <option>Horror</option>
-                </Input>
+                <Input
+                  name="genre"
+                  type="text"
+                  placeholder="Género"
+                  onChange={onInputChange}
+                  value={genre}
+                  required
+                />
               </FormGroup>
 
               <FormGroup>
@@ -253,10 +259,12 @@ const Header = () => {
                   Duración
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
-                  type="number"
+                  name="mov_time"
+                  type="text"
                   placeholder="Duración de la película"
+                  onChange={onInputChange}
+                  value={mov_time}
+                  required
                 />
                 <FormText style={{color: "black"}}>Duración en minutos</FormText>
               </FormGroup>
@@ -266,10 +274,12 @@ const Header = () => {
                   Descripción
                 </Label>
                 <Input
-                  id="exampleText"
-                  name="text"
-                  type="textarea"
+                  name="description"
+                  type="text"
                   placeholder="Descripción de la película"
+                  onChange={onInputChange}
+                  value={description}
+                  required
                 />
               </FormGroup>
 
@@ -278,12 +288,10 @@ const Header = () => {
                   File
                 </Label>
                 <Col sm={10}>
-                  <Input id="exampleFile" name="file" type="file" />
+                  <File type="file" multiple={false} onDone={({base64})=>setMovieData({...movieData, imageFile:base64})}/>
                   <FormText>Formato soportado (JPG, PNG)</FormText>
                 </Col>
               </FormGroup>
-            </Form>
-
             <ModalFooter>
               <Button color="primary" onClick={onFormSubmit}>
                 Guardar
@@ -292,6 +300,7 @@ const Header = () => {
                 Cancelar
               </Button>
             </ModalFooter>
+            </Form>
           </Modal>
         </div>
       </div>
