@@ -29,22 +29,22 @@ export default function ListMovies({
     >
       <CardImg alt="Card image cap" src={imgprueba} />
       <CardBody>
-        <CardTitle tag="h5">{mov_title}</CardTitle>
+        <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {mov_year}
+          {`Año: ${mov_year}`}
         </CardSubtitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {director}
+          {`Director: ${director}`}
         </CardSubtitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {actors}
+          {`Elenco: ${actors}`}
         </CardSubtitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {rating}
+          {`Rating: ${rating}`}
         </CardSubtitle>
 
         <Button>Ver más</Button>
