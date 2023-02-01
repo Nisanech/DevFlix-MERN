@@ -1,12 +1,12 @@
 //Allows you to work with the database
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose"); //método
+const Schema = mongoose.Schema; 
 
 //Structure of the collection in the database
 const MovieSchema = new Schema({
     //imformation movie
     mov_title:{
-        type: String,
+        type: String, 
         required: true,
         trim:true,
     },
