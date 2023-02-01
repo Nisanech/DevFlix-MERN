@@ -8,8 +8,29 @@ const CardMovie = ({movie}) => {
 
   const [editing, setEditing] = useState(false);
 
+  const [text, setText]= useState(movie?.data)
 
-  const [text, setText] = useState(movie?.data);
+  const [title, setTitle]= useState(movie?.data)
+
+  const [director, setDirector]= useState(movie?.data)
+
+  const [year, setYear]= useState(movie?.data)
+
+  const [premiere, setPremiere]= useState(movie?.data)
+
+  const [gender, setGender]= useState(movie?.data)
+
+  const [time, setTime]= useState(movie?.data)
+
+  const [description, setDescription]= useState(movie?.data)
+
+  const [cast, setCast]= useState(movie?.data)
+
+  const [country, setCountry]= useState(movie?.data)
+
+  const [language, setLanguage]= useState(movie?.data)
+
+  const [rating, setRating]= useState(movie?.data)
 
   const dispatch = useDispatch();
 
@@ -28,7 +49,18 @@ const CardMovie = ({movie}) => {
   return (
   <>
     <div className="card2">
-      <h2 className="titleMovie">NOMBRE DE LA PELÍCULA</h2>
+      <h2 className="titleMovie" style={{ display: editing ? "none" : "" }}>NOMBRE DE LA PELÍCULA</h2>
+      
+            <form 
+                style={{ display: editing ? "inline" : "none" }}
+                onSubmit={onFormSubmit}>
+                  <input
+                    type="text"
+                    value={title}
+                    className="todo-input edit"
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                </form>
       <div className="cardPpal">
         {/* IMAGEN */}
         <div className="sideImg">
@@ -43,15 +75,16 @@ const CardMovie = ({movie}) => {
               <div className="info1">
                 <h3>DIRECTOR</h3>
 
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
+                <p style={{ display: editing ? "none" : "" }}>{movie?.data}</p>
                 <form 
                 style={{ display: editing ? "inline" : "none" }}
                 onSubmit={onFormSubmit}>
                   <input
+                    
                     type="text"
-                    value={text}
+                    value={director}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setDirector(e.target.value)}
                   />
                 </form>
                 
@@ -63,9 +96,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={year}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setYear(e.target.value)}
                   />
                 </form>
                 <h3>ESTRENO</h3>
@@ -75,9 +108,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={premiere}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setPremiere(e.target.value)}
                   />
                 </form>
                 <h3>GENERO</h3>
@@ -87,9 +120,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={gender}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setGender(e.target.value)}
                   />
                 </form>
                 <h3>DURACIÓN</h3>
@@ -99,9 +132,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={time}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setTime(e.target.value)}
                   />
                 </form>
               </div>
@@ -113,9 +146,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={cast}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setCast(e.target.value)}
                   />
                 </form>
                 <h3>PAÍS</h3>
@@ -125,21 +158,20 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={country}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setCountry(e.target.value)}
                   />
                 </form>
                 <h3>LENGUAJE</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
                 <form 
                 style={{ display: editing ? "inline" : "none" }}
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={language}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setLanguage(e.target.value)}
                   />
                 </form>
                 <h3>VALORACIÓN</h3>
@@ -149,9 +181,9 @@ const CardMovie = ({movie}) => {
                 onSubmit={onFormSubmit}>
                   <input
                     type="text"
-                    value={text}
+                    value={rating}
                     className="todo-input edit"
-                    onChange={(e) => setText(e.target.value)}
+                    onChange={(e) => setRating(e.target.value)}
                   />
                 </form>
               </div>
@@ -161,8 +193,17 @@ const CardMovie = ({movie}) => {
         </div>
       </div>
       <h3>DESCRIPCIÓN</h3>
-      <p className="description" style={{ display: editing ? "none" : "" }}>{movie?.director}
-      </p>
+      <p className="description" style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
+            <form 
+                style={{ display: editing ? "inline" : "none" }}
+                onSubmit={onFormSubmit}>
+                  <input
+                    type="text"
+                    value={description}
+                    className="todo-input edit"
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                </form>
       <div className="buttons">
         <button className="editButton" onClick={() => setEditing((prevState) => !prevState)}>Editar</button>
         <button className="deleteButton">Eliminar</button>
@@ -174,7 +215,9 @@ const CardMovie = ({movie}) => {
 
 export default CardMovie;
 
-{
+
+
+
   /* <div className="card">
 <div className="cardMovie">
   <h2>GLADIADOR</h2>
@@ -206,4 +249,4 @@ export default CardMovie;
   </div>
 </div>
 </div> */
-}
+
