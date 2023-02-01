@@ -292,6 +292,7 @@ const Header = () => {
                   <FormText>Formato soportado (JPG, PNG)</FormText>
                 </Col>
               </FormGroup>
+            </Form>
             <ModalFooter>
               <Button color="primary" onClick={onFormSubmit}>
                 Guardar
@@ -300,7 +301,6 @@ const Header = () => {
                 Cancelar
               </Button>
             </ModalFooter>
-            </Form>
           </Modal>
         </div>
       </div>
