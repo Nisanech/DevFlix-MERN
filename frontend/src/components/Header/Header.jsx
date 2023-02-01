@@ -2,14 +2,17 @@ import React from "react";
 import "./Header.css";
 import { CiUser } from "react-icons/ci";
 import img from "./logoblanco.png";
+import file from "react-file-base64";
+import { toast } from "react-toastify";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 // Importar disparador de acciones de Redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Importar acciones para el consumo de la API
-import { addNewMovie } from "../../redux/actions/index";
+import { createMovies} from "../../redux/actions/movieSlice";
 
 import {
   Button,
@@ -24,17 +27,71 @@ import {
   FormText,
 } from "reactstrap";
 
+
+const initialState = {
+  mov_title:"",
+  mov_year:"",
+  mov_time:"",
+  mov_lang:"",
+  mov_dt_rel:"",
+  mov_rel_country:"",
+  description:"",
+  actors:"",
+  genre:"",
+  director:"",
+  rating:""
+} 
+
+
+
 const Header = () => {
-  // Estado para el valor del input
-  const [text, setText] = useState("");
+ // Estado para ingressar datos de la pelicula
+  const [movieData, setMovieData] = useState(initialState);
+ 
+  const {error} = useSelector(state => ({...state.movie})) 
   // Se declara la constante para hacer uso del hook que dispara la acción del reducer
   const dispatch = useDispatch();
+
+  const {
+    mov_title,
+    mov_year,
+    mov_time,
+    mov_lang,
+    mov_dt_rel,
+    mov_rel_country,
+    description,
+    actors,
+    genre,
+    director,
+    rating 
+  } = movieData
 
   // Función para enviar el formulario al agregar una nueva tarea
   const onFormSubmit = (e) => {
     // Previene el evento por defecto del elemento
     e.preventDefault();
 
+      if (
+        mov_title && 
+        mov_year && 
+        mov_time &&
+        mov_lang &&
+        mov_dt_rel &&
+        mov_rel_country &&
+        description &&
+        actors &&
+        genre &&
+        director &&
+        rating 
+        )   
+        {
+        const updateMovieData = {...movieData}
+        dispatch(createMovie(updateMovieData, toast));
+        
+        handleClear()
+      }
+
+      
     // Se dispara la acción del reducer para agregar la tarea recibiendo la información o nombre de la tarea
     dispatch(addNewMovie(text));
 

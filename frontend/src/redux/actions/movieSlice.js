@@ -13,6 +13,19 @@ export const getMovies = createAsyncThunk(
   }
 )
 
+export const createMovies = createAsyncThunk(
+  "movie/createMovies",
+  async ({updateMovieData, toast}, { rejectWithValue }) => {
+    try {
+      const response = await api.createMovies(updateMovieData)
+      toast.success("Película agregada exitosamente")
+      return response.data
+    } catch (error) {
+      return rejectWithValue(error.response.data)
+    }
+  }
+)
+
 const movieSlice = createSlice({
   name: "movie",
   initialState: {
@@ -31,6 +44,17 @@ const movieSlice = createSlice({
       state.movies = action.payload;
     },
     [getMovies.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+    [createMovies.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [createMovies.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.movies = [action.payload];
+    },
+    [createMovies.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
