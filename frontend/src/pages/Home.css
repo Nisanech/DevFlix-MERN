@@ -7,6 +7,19 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.container_movies {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) { 
+    .container_movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 .footerHome{
     position:relative;
     bottom: 0;

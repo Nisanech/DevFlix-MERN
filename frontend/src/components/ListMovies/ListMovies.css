@@ -85,13 +85,6 @@ h6.text-muted {
   .card img {
     margin: 5px auto 0 auto;
   }
-  .container_movies {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;    
-    align-items: center;
-    justify-content: center;
-  }
   .card-title {
     font-size: 1.2vw;
   }
