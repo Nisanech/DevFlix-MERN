@@ -4,6 +4,7 @@ import { CiUser } from 'react-icons/ci';
 import img from "./logoblanco.png";
 
 const Header = () => {
+    
   return (
     <header className='head'> 
             
