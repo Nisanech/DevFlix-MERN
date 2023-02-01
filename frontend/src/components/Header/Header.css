@@ -1,21 +1,41 @@
 .head {
-    background-color: #131313;
-    color: white;
-    width: 100%;
-    height: 6rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    top: 0;
-    z-index: 1;
+  background-color: #131313;
+  color: white;
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 0;
+  z-index: 1;
 }
 
-.logoDevflix{
-    width: 60%;
-    margin-left: 0rem;
+.modal-content {
+  padding: 0 20px;
 }
+
+
+.conta {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.logo {
+  width: 250px;
+  height: 80px;
+}
+.logo img {
+  width: 250px;
+  height: 80px;
+}
+.logoDevflix {
+  width: 60%;
+  margin-left: 0rem;
+}
+
 .info h1 {
   font-size: 1rem;
   margin: 0px;
@@ -39,10 +59,12 @@
     rgba(187, 14, 14, 1) 100%
   );
   border-radius: 50px;
-  width: 8rem;
-  height: 2rem;
+  width: 120px;
+  height: 35px;
   border: none;
   color: white;
+  font-size: 18px;
+  text-align: center;
 }
 
 .add:hover {
@@ -57,69 +79,79 @@
 
 /* QUERY TABLET */
 @media (min-width: 766px) {
-    .head{
-        width:100%;
-        height: 10vh;
-        justify-content: flex-start;
-    }
-    
-    .info{
-        width: 200px;
-        height: 80px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 30px 0;
-    }
-    .info h1{
-        font-size: 30px;
+  .head {
+    width: 100%;
+    height: 10vh;
+  }
 
-    }
-    .info h2{
-        font-size: 20px;
-    }
-    .icongr{
-        width: 60px;
-        height: 60px;
-    }
-    .add{
-        width: 150px;
-        height: 50px;
-        font-size: 23px;
-    }
+  .info {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .info h1 {
+    font-size: 30px;
+  }
+
+  .info h2 {
+    font-size: 20px;
+  }
+
+  .icongr {
+    width: 60px;
+    height: 60px;
+  }
+
+  .add {
+    width: 150px;
+    height: 50px;
+    font-size: 23px;
+  }
 }
 
 /* QUERY DESKTOP */
 @media (min-width: 1024px) {
-    .head{
-        width: 100%;
-        height: 15vh;
-        justify-content: flex-start;
-    }
-    .info{
-        width: 200px;
-        height: 80px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 30px 0;
-    }
-    .info h1{
-        font-size: 40px;
+  .head {
+    width: 100%;
+    height: 15vh;
+    align-items: center;
+  }
+  .logo img {
+    width: 200px;
+    height: 70px;
+}
 
-    }
-    .info h2{
-        font-size: 25px;
-    }
-    .icongr{
-        width: 80px;
-        height: 80px;
-    }
-    .add{
-        width: 170px;
-        height: 50px;
-        font-size: 25px;
-    }
+  .info {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .info h1 {
+    font-size: 40px;
+  }
+
+  .info h2 {
+    font-size: 25px;
+  }
+
+  .icongr {
+    width: 80px;
+    height: 80px;
+  }
+
+  .add {
+    width: 170px;
+    height: 50px;
+    font-size: 25px;
+  }
 }

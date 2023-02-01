@@ -6,7 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Header from '../components/Header/Header'
 import ListMovies from '../components/ListMovies/ListMovies'
 import CardMovie from '../components/CardMovie/CardMovie'
-
+import Footer from '../components/Footer/Footer'
 const Home = () => {
   return (
     <>
