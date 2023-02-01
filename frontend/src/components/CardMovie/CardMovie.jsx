@@ -1,36 +1,32 @@
-
 import "./CardMovie.css";
 import image from "./spiritedaway.png";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
-import {updateMovie} from "../../redux/actions/index"
-const CardMovie = ({movie}) => {
-
+import { updateMovie } from "../../redux/actions/index";
+const CardMovie = ({ movie }) => {
   const [editing, setEditing] = useState(false);
 
-  const [text, setText]= useState(movie?.data)
+  const [title, setTitle] = useState(movie?.data);
 
-  const [title, setTitle]= useState(movie?.data)
+  const [director, setDirector] = useState(movie?.data);
 
-  const [director, setDirector]= useState(movie?.data)
+  const [year, setYear] = useState(movie?.data);
 
-  const [year, setYear]= useState(movie?.data)
+  const [premiere, setPremiere] = useState(movie?.data);
 
-  const [premiere, setPremiere]= useState(movie?.data)
+  const [gender, setGender] = useState(movie?.data);
 
-  const [gender, setGender]= useState(movie?.data)
+  const [time, setTime] = useState(movie?.data);
 
-  const [time, setTime]= useState(movie?.data)
+  const [description, setDescription] = useState(movie?.data);
 
-  const [description, setDescription]= useState(movie?.data)
+  const [cast, setCast] = useState(movie?.data);
 
-  const [cast, setCast]= useState(movie?.data)
+  const [country, setCountry] = useState(movie?.data);
 
-  const [country, setCountry]= useState(movie?.data)
+  const [language, setLanguage] = useState(movie?.data);
 
-  const [language, setLanguage]= useState(movie?.data)
-
-  const [rating, setRating]= useState(movie?.data)
+  const [rating, setRating] = useState(movie?.data);
 
   const dispatch = useDispatch();
 
@@ -43,57 +39,60 @@ const CardMovie = ({movie}) => {
     setEditing((prevState) => !prevState);
 
     // Se dispara la acción del reducer para actualizar la tarea recibiendo el id y la nueva información
-    dispatch(updateMovie(movie._id, text));
+    dispatch(updateMovie(movie._id, editing, title, director, year, premiere, gender, time, description, cast, country, language, rating));
   };
 
   return (
-  <>
-    <div className="card2">
-      <h2 className="titleMovie" style={{ display: editing ? "none" : "" }}>NOMBRE DE LA PELÍCULA</h2>
-      
-            <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
-                  <input
-                    type="text"
-                    value={title}
-                    className="todo-input edit"
-                    onChange={(e) => setTitle(e.target.value)}
-                  />
-                </form>
-      <div className="cardPpal">
-        {/* IMAGEN */}
-        <div className="sideImg">
-          <img className="imgMovie" src={image} alt="" />
-        </div>
+    <>
+      <div className="card2">
+        <h2 className="titleMovie" style={{ display: editing ? "none" : "" }}>
+          NOMBRE DE LA PELÍCULA
+        </h2>
 
-        {/* INFO MOVIE */}
-        <div className="sideInfo">
-        
+        <form
+          style={{ display: editing ? "inline" : "none" }}
+          onSubmit={onFormSubmit}
+        >
+          <input
+            type="text"
+            value={title}
+            className="todo-input edit"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </form>
+        <div className="cardPpal">
+          {/* IMAGEN */}
+          <div className="sideImg">
+            <img className="imgMovie" src={image} alt="" />
+          </div>
+
+          {/* INFO MOVIE */}
+          <div className="sideInfo">
             <div className="infoMovie">
-
               <div className="info1">
                 <h3>DIRECTOR</h3>
 
                 <p style={{ display: editing ? "none" : "" }}>{movie?.data}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
-                    
                     type="text"
                     value={director}
                     className="todo-input edit"
                     onChange={(e) => setDirector(e.target.value)}
                   />
                 </form>
-                
-                
+
                 <h3>AÑO</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={year}
@@ -102,10 +101,13 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>ESTRENO</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={premiere}
@@ -114,10 +116,13 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>GENERO</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={gender}
@@ -126,10 +131,13 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>DURACIÓN</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={time}
@@ -140,10 +148,13 @@ const CardMovie = ({movie}) => {
               </div>
               <div className="info2">
                 <h3>REPARTO</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={cast}
@@ -152,10 +163,13 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>PAÍS</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={country}
@@ -164,9 +178,10 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>LENGUAJE</h3>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={language}
@@ -175,10 +190,13 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
                 <h3>VALORACIÓN</h3>
-                <p style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-                <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
+                <p style={{ display: editing ? "none" : "" }}>
+                  {movie?.director}
+                </p>
+                <form
+                  style={{ display: editing ? "inline" : "none" }}
+                  onSubmit={onFormSubmit}
+                >
                   <input
                     type="text"
                     value={rating}
@@ -187,38 +205,41 @@ const CardMovie = ({movie}) => {
                   />
                 </form>
               </div>
-
             </div>
-          
+          </div>
+        </div>
+        <h3>DESCRIPCIÓN</h3>
+        <p className="description" style={{ display: editing ? "none" : "" }}>
+          {movie?.director}
+        </p>
+        <form
+          style={{ display: editing ? "inline" : "none" }}
+          onSubmit={onFormSubmit}
+        >
+          <input
+            type="text"
+            value={description}
+            className="todo-input edit"
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </form>
+        <div className="buttons">
+          <button
+            className="editButton"
+            onClick={() => setEditing((prevState) => !prevState)}
+          >
+            Editar
+          </button>
+          <button className="deleteButton">Eliminar</button>
         </div>
       </div>
-      <h3>DESCRIPCIÓN</h3>
-      <p className="description" style={{ display: editing ? "none" : "" }}>{movie?.director}</p>
-            <form 
-                style={{ display: editing ? "inline" : "none" }}
-                onSubmit={onFormSubmit}>
-                  <input
-                    type="text"
-                    value={description}
-                    className="todo-input edit"
-                    onChange={(e) => setDescription(e.target.value)}
-                  />
-                </form>
-      <div className="buttons">
-        <button className="editButton" onClick={() => setEditing((prevState) => !prevState)}>Editar</button>
-        <button className="deleteButton">Eliminar</button>
-      </div>
-    </div>
     </>
   );
 };
 
 export default CardMovie;
 
-
-
-
-  /* <div className="card">
+/* <div className="card">
 <div className="cardMovie">
   <h2>GLADIADOR</h2>
   <div className="cardPpal">
@@ -249,4 +270,3 @@ export default CardMovie;
   </div>
 </div>
 </div> */
-
