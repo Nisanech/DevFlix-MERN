@@ -30,5 +30,19 @@ const getMovies = async (req, res) => {
     }
 }
 
+// Función para obtener la información de una película
+const getMovie = async(req, res) => {
+  const {id} = req.params
+
+  try {
+    const movie = await movieModel.findById(id)
+
+    res.status(200).json(movie)
+  } catch (error) {
+    res.status(404).json({message: 'Algo salió mal'})
+  }
+}
+
 exports.createMovie = createMovie
 exports.getMovies = getMovies
+exports.getMovie = getMovie

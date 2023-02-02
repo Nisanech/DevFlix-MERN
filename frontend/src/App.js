@@ -12,6 +12,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AddMovie from './pages/AddMovie'
+import ViewMovie from './pages/ViewMovie'
 
 // Componentes
 import Header from './components/Header/Header'
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/addMovie" element={<AddMovie />} />
+          <Route path="/movie/:id" element={<ViewMovie />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -15,3 +15,6 @@ export const getMovies = () => API.get('/movies');
 
 // Petición para ingresar toda la información de la película
 export const createMovies = (movieData) => API.post('/movies/new', movieData);
+
+// Petición para ver el detalle de la película
+export const getMovie = (id) => API.get(`/movies/${id}`)

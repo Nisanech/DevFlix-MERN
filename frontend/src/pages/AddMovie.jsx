@@ -1,28 +1,15 @@
 // Dependencias
 import React, { useState, useEffect } from "react";
-// import MultipleValueTextInput from "react-multivalue-text-input";
 import FileBase from "react-file-base64";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { TagsInput } from "react-tag-input-component";
 
 // Acciones de redux
 import { createMovies } from "../redux/actions/movieSlice";
 
 // Estilos
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalFooter,
-  Label,
-  FormGroup,
-  Form,
-  Input,
-  Col,
-  FormText,
-} from "reactstrap";
+import { Button, FormGroup, Form, Input, Nav } from "reactstrap";
 
 // Se declara el estado inicial para el valor de cada input
 const initialState = {
@@ -32,7 +19,7 @@ const initialState = {
   mov_lang: "",
   mov_rel_country: "",
   description: "",
-  actors: [],
+  actors: "",
   genre: "",
   director: "",
   rating: "",
@@ -100,18 +87,7 @@ const AddMovie = () => {
     setMovieData({ ...movieData, [name]: value });
   };
 
-  // Funciones para eliminar o agregar varios actores
-  const handleAddActor = (actor) => {
-    setMovieData({ ...movieData, actors: [...movieData.actors, actor] });
-  };
-
-  const handleDeleteActor = (deleteActor) => {
-    setMovieData({
-      ...movieData,
-      actors: movieData.actors.filter((actor) => actor !== deleteActor),
-    });
-  };
-
+  // Función para limpiar el formulario
   const handleClear = () => {
     setMovieData({
       mov_title: "",
@@ -120,7 +96,7 @@ const AddMovie = () => {
       mov_lang: "",
       mov_rel_country: "",
       description: "",
-      actors: [],
+      actors: "",
       genre: "",
       director: "",
       rating: "",
@@ -163,7 +139,6 @@ const AddMovie = () => {
           />
         </FormGroup>
         <FormGroup>
-
           <Input
             type="text"
             placeholder="Duración"
@@ -208,7 +183,7 @@ const AddMovie = () => {
         </FormGroup>
 
         <FormGroup>
-        <Input
+          <Input
             type="text"
             placeholder="Actores"
             value={actors}
@@ -250,7 +225,7 @@ const AddMovie = () => {
             required
           />
         </FormGroup>
-        
+
         <div className="d-flex justify-content-start mt-4">
           <FileBase
             type="file"
@@ -264,6 +239,9 @@ const AddMovie = () => {
         <div className="col-12">
           <Button style={{ width: "100%" }}>Guardar</Button>
         </div>
+        <NavLink to="/" className="col-12">
+          <Button style={{ width: "100%" }}>Cancelar</Button>
+        </NavLink>
       </Form>
     </div>
   );

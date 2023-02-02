@@ -1,7 +1,8 @@
-import "./ListMovies.css";
-import imgprueba from "./braveheart.png";
+// Dependencias
+import React from "react";
+import { Link } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+// Estilos
 import {
   Card,
   CardImg,
@@ -10,6 +11,7 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import "./ListMovies.css";
 
 export default function ListMovies({
   mov_title,
@@ -17,7 +19,8 @@ export default function ListMovies({
   director,
   actors,
   rating,
-  imageFile
+  imageFile,
+  _id,
 }) {
   return (
     <Card
@@ -48,7 +51,9 @@ export default function ListMovies({
           {`Rating: ${rating}`}
         </CardSubtitle>
 
-        <Button>Ver más</Button>
+        <Link to={`/movie/${_id}`}>
+          <Button>Ver más</Button>
+        </Link>
       </CardBody>
     </Card>
   );
