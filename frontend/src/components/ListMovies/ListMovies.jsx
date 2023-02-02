@@ -71,12 +71,13 @@ export default function ListMovies({
         </CardSubtitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Genero: ${genre}`}
+        </CardSubtitle>
+        
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
           {`Descripción: ${description}`}
         </CardSubtitle>
 
-        <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {`Genero: ${genre}`}
-        </CardSubtitle>
 
         <div className="buttonsCardList">
           <Button>Editar</Button>
