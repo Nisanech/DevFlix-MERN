@@ -26,11 +26,8 @@ const Home = () => {
     <>
     <div className='home'>
       <Header />
-
       <main>
-      <CardMovie />
       </main>
-
       {/* Filtros */}
       <div className="general-container">
         <div className="container_ListMovies">

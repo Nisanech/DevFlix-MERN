@@ -302,7 +302,7 @@ const Header = () => {
 
               <FormGroup>
                 <Label for="exampleText">
-                  rating
+                  Rating
                 </Label>
                 <Input
                   name="rating"
@@ -312,16 +312,6 @@ const Header = () => {
                   value={rating}
                   required
                 />
-              </FormGroup>
-
-              <FormGroup>
-                <Label for="exampleFile" sm={2}>
-                  File
-                </Label>
-                <Col sm={10}>
-                  <File type="file" multiple={false} onDone={({base64})=>setMovieData({...movieData, imageFile:base64})}/>
-                  <FormText>Formato soportado (JPG, PNG)</FormText>
-                </Col>
               </FormGroup>
             </Form>
             <ModalFooter>

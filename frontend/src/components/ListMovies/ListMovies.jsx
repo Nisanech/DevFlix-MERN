@@ -14,20 +14,31 @@ import {
 export default function ListMovies({
   mov_title,
   mov_year,
-  director,
+  mov_time,
+  mov_lang,
+  mov_dt_rel,
+  mov_rel_country,
+  description,
   actors,
-  rating,
+  genre,
+  director,
+  rating
 }) {
+
+
+  
   return (
     <Card
       style={{
-        backgroundColor: "transparent",
+        backgroundColor: "white",
         borderWidth: "1px",
         borderStyle: "solid",
         borderColor: "purple",
+        color: "black",
+
       }}
     >
-      <CardImg alt="Card image cap" src={imgprueba} />
+      <CardImg alt="Card image cap" src="https://media.gettyimages.com/id/1244034031/es/vector/cartel-de-cine-con-cola-tira-de-pel%C3%ADcula-y-clapper-vector.jpg?s=1024x1024&w=gi&k=20&c=cj5CEus6m_oMnzVm1OraiN7J9oCISeI6NU4c8t02b58="/>
       <CardBody>
         <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
@@ -45,6 +56,30 @@ export default function ListMovies({
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           {`Rating: ${rating}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Duración: ${mov_time}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Lenguaje: ${mov_lang}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Estreno: ${mov_dt_rel}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`País: ${  mov_rel_country}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Descripción: ${description}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Genero: ${genre}`}
         </CardSubtitle>
 
         <Button>Ver más</Button>
