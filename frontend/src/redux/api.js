@@ -9,3 +9,15 @@ export const signIn = (formData) => API.post("/users/signin", formData);
 
 // Petición para el registro de usuario
 export const signUp = (formData) => API.post("/users/signup", formData);
+
+// Petición para obtener las películas
+export const getMovies = () => API.get('/movies');
+
+// Petición para ingresar toda la información de la película
+export const createMovies = (movieData) => API.post('/movies/new', movieData);
+
+// Petición para ver el detalle de la película
+export const getMovie = (id) => API.get(`/movies/${id}`)
+
+// Petición para editar la película
+export const updateMovie = (updatedMovieData, id) => API.put(`/movies/${id}`, updatedMovieData)

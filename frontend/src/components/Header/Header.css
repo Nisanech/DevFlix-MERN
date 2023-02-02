@@ -11,11 +11,6 @@
   z-index: 1;
 }
 
-.modal-content {
-  padding: 0 20px;
-}
-
-
 .conta {
   display: flex;
   justify-content: space-around;
@@ -23,13 +18,9 @@
   width: 100%;
   flex-wrap: wrap;
 }
-.logo {
-  width: 250px;
-  height: 80px;
-}
 .logo img {
-  width: 250px;
-  height: 80px;
+  width: 12rem;
+
 }
 .logoDevflix {
   width: 60%;
@@ -65,6 +56,7 @@
   color: white;
   font-size: 18px;
   text-align: center;
+  margin: 1rem 0;
 }
 
 .add:hover {
@@ -81,7 +73,7 @@
 @media (min-width: 766px) {
   .head {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
   }
 
   .info {
@@ -112,6 +104,28 @@
     height: 50px;
     font-size: 23px;
   }
+
+  .conta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    height: 30%;
+  }
+}
+
+/* ---ESTILOS PARA EL FORMULARIO --- */
+
+.modal-content {
+  color: white;
+  opacity: 0.9;
+  padding: 0 30px;
+  background-image: linear-gradient(279deg, rgb(0, 66, 255), rgb(235, 0, 27));
+}
+
+.modal-header .modal-title label.form-label {
+  color: white;
 }
 
 /* QUERY DESKTOP */
