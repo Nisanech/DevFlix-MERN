@@ -5,6 +5,7 @@ const Movie = require("../models/movieModel");
 
 //Create movie
 const addMovie =async (request, response) =>{
+    console.log(request.body)
     try{
         //save the information
         const newMovie = await Movie.create({
@@ -28,6 +29,7 @@ const addMovie =async (request, response) =>{
         //Returns status 200 if the request was created correctly
         return response.status(200).json(newMovie);
     }catch(error){
+        console.log(error.message)
         // Return status 500 if there is an error sending the request
         return response.status(500).json(error.message);
     }

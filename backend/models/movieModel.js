@@ -68,7 +68,7 @@ const MovieSchema = new Schema({
     },
     imageFile:{
         type: String,
-        required: true,
+        default: "",         
         trim: true,
     }
 });

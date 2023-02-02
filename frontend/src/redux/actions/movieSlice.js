@@ -21,6 +21,7 @@ export const createMovies = createAsyncThunk(
       toast.success("Película agregada exitosamente")
       return response.data
     } catch (error) {
+      console.log(error.message)
       return rejectWithValue(error.response.data)
     }
   }

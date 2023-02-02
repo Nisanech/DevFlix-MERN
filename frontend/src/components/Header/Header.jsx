@@ -70,9 +70,10 @@ const Header = () => {
     error && toast.error(error)
   },[error])
   // Función para enviar el formulario al agregar una nueva tarea
-  const onFormSubmit = (e) => {
+  const onFormSubmit  = async(e) => {
     // Previene el evento por defecto del elemento
     e.preventDefault();
+
 
       if (
         mov_title && 
@@ -89,7 +90,23 @@ const Header = () => {
         )   
         {
         const updateMovieData = {...movieData}
-        dispatch(createMovies(updateMovieData, toast));
+        console.log(updateMovieData)
+
+        try {
+          const res = fetch("http://localhost:5000/movies/movie/new", {method: "POST",
+          headers:{
+              "Content-Type":"application/json"
+              
+          },body : JSON.stringify(updateMovieData)          
+        
+        })
+        const json = res.json();
+        console.log(json)          
+        } catch (error) {
+          console.log(error)          
+        }
+
+        /* dispatch(createMovies(updateMovieData, toast)); */
         
         handleClear()
       }
@@ -279,6 +296,20 @@ const Header = () => {
                   placeholder="Descripción de la película"
                   onChange={onInputChange}
                   value={description}
+                  required
+                />
+              </FormGroup>
+
+              <FormGroup>
+                <Label for="exampleText">
+                  rating
+                </Label>
+                <Input
+                  name="rating"
+                  type="text"
+                  placeholder="rating pelicula"
+                  onChange={onInputChange}
+                  value={rating}
                   required
                 />
               </FormGroup>
