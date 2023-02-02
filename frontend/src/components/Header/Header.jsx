@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 
 import { useState, useEffect } from "react";
 
-
 // Importar disparador de acciones de Redux
 import { useDispatch, useSelector } from "react-redux";
 
@@ -41,8 +40,6 @@ const initialState = {
   director:"",
   rating:""
 } 
-
-
 
 const Header = () => {
  // Estado para ingressar datos de la pelicula
@@ -95,10 +92,8 @@ const Header = () => {
         try {
           const res = fetch("http://localhost:5000/movies/movie/new", {method: "POST",
           headers:{
-              "Content-Type":"application/json"
-              
-          },body : JSON.stringify(updateMovieData)          
-        
+              "Content-Type":"application/json"              
+          },body : JSON.stringify(updateMovieData)        
         })
         const json = res.json();
         console.log(json)          
