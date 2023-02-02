@@ -2,10 +2,11 @@
 .home{
     z-index: 1;
     background-image: url("../assets/image/backgrounddashboard.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
 }
 
 .container_movies {

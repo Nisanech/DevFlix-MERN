@@ -13,7 +13,7 @@ export const login = createAsyncThunk(
 
       toast.success("Ingreso correcto");
 
-      navigate("/home");
+      navigate("/dashboard");
 
       return response.data;
     } catch (error) {
@@ -31,7 +31,7 @@ export const register = createAsyncThunk(
 
       toast.success("Registro correcto");
 
-      navigate("/");
+      navigate("/login");
 
       return response.data;
     } catch (error) {
@@ -39,6 +39,7 @@ export const register = createAsyncThunk(
     }
   }
 );
+
 // Slice
 const authSlice = createSlice({
   name: "auth",
@@ -49,9 +50,16 @@ const authSlice = createSlice({
   },
 
   reducers: {
+    // Persistencia del usuario que inicia sesión
     setUser: (state, action) => {
       state.user = action.payload;
     },
+
+    // Función para cerrar la sesión
+    setLogout: (state, action) => {
+      localStorage.clear()
+      state.user = null
+    }
   },
 
   extraReducers: {
@@ -85,6 +93,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUser } = authSlice.actions;
+export const { setUser, setLogout } = authSlice.actions;
 
 export default authSlice.reducer;
