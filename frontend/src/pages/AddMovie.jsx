@@ -4,7 +4,6 @@ import FileBase from "react-file-base64";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 // Acciones de redux
 import { createMovies } from "../redux/actions/movieSlice";
 
@@ -21,6 +20,7 @@ import {
   Col,
   FormText,
 } from "reactstrap";
+import Footer from "../components/Footer/Footer";
 
 // Se declara el estado inicial para el valor de cada input
 const initialState = {
@@ -126,144 +126,146 @@ const AddMovie = () => {
   };
 
   return (
-    <div
-      style={{
-        margin: "auto",
-        padding: "20px",
-        maxWidth: "600px",
-        alignContent: "center",
-        marginTop: "50px",
-        marginBottom: "20px",
-      }}
-    >
-      <h5>Agregar Película</h5>
-
-      <Form onSubmit={handleSubmit} className="row g-3">
-        <FormGroup>
+      <div
+        style={{
+          margin: "auto",
+          padding: "20px",
+          maxWidth: "600px",
+          alignContent: "center",
+          marginTop: "50px",
+          marginBottom: "20px",
+        }}
+      >
+        <h5>Agregar Película</h5>
+      
+        <Form onSubmit={handleSubmit} className="row g-3" 
+        style={{
+        }}>
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Título"
+              value={mov_title}
+              name="mov_title"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Año"
+              value={mov_year}
+              name="mov_year"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+      
+            <Input
+              type="text"
+              placeholder="Duración"
+              value={mov_time}
+              name="mov_time"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Idioma"
+              value={mov_lang}
+              name="mov_lang"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="País"
+              value={mov_rel_country}
+              name="mov_rel_country"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="textarea"
+              placeholder="Descripción"
+              value={description}
+              name="description"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
           <Input
-            type="text"
-            placeholder="Título"
-            value={mov_title}
-            name="mov_title"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="Año"
-            value={mov_year}
-            name="mov_year"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-
-          <Input
-            type="text"
-            placeholder="Duración"
-            value={mov_time}
-            name="mov_time"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="Idioma"
-            value={mov_lang}
-            name="mov_lang"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="País"
-            value={mov_rel_country}
-            name="mov_rel_country"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="textarea"
-            placeholder="Descripción"
-            value={description}
-            name="description"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-        <Input
-            type="text"
-            placeholder="Actores"
-            value={actors}
-            name="actors"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="Género"
-            value={genre}
-            name="genre"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="Director"
-            value={director}
-            name="director"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-
-        <FormGroup>
-          <Input
-            type="text"
-            placeholder="Rating"
-            value={rating}
-            name="rating"
-            onChange={onInputChange}
-            required
-          />
-        </FormGroup>
-        
-        <div className="d-flex justify-content-start mt-4">
-          <FileBase
-            type="file"
-            multiple={false}
-            onDone={({ base64 }) =>
-              setMovieData({ ...movieData, imageFile: base64 })
-            }
-          />
-        </div>
-
-        <div className="col-12">
-          <Button style={{ width: "100%" }}>Guardar</Button>
-        </div>
-      </Form>
-    </div>
+              type="text"
+              placeholder="Actores"
+              value={actors}
+              name="actors"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Género"
+              value={genre}
+              name="genre"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Director"
+              value={director}
+              name="director"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+      
+          <FormGroup>
+            <Input
+              type="text"
+              placeholder="Rating"
+              value={rating}
+              name="rating"
+              onChange={onInputChange}
+              required
+            />
+          </FormGroup>
+          
+          <div className="d-flex justify-content-start mt-4">
+            <FileBase
+              type="file"
+              multiple={false}
+              onDone={({ base64 }) =>
+                setMovieData({ ...movieData, imageFile: base64 })
+              }
+            />
+          </div>
+      
+          <div className="col-12">
+            <Button style={{ width: "100%", marginBottom: "40px" }}>Guardar</Button>
+          </div>
+        </Form>
+      </div>
   );
 };
 

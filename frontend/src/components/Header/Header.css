@@ -18,13 +18,9 @@
   width: 100%;
   flex-wrap: wrap;
 }
-.logo {
-  width: 250px;
-  height: 80px;
-}
 .logo img {
-  width: 250px;
-  height: 80px;
+  width: 12rem;
+
 }
 .logoDevflix {
   width: 60%;
@@ -60,6 +56,7 @@
   color: white;
   font-size: 18px;
   text-align: center;
+  margin: 1rem 0;
 }
 
 .add:hover {
@@ -76,7 +73,7 @@
 @media (min-width: 766px) {
   .head {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
   }
 
   .info {
@@ -106,6 +103,15 @@
     width: 150px;
     height: 50px;
     font-size: 23px;
+  }
+
+  .conta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    height: 30%;
   }
 }
 

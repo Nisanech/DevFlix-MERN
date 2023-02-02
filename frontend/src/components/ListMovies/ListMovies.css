@@ -3,6 +3,9 @@
   --titleText: "Quicksand", sans-serif;
   --text: "Saira", sans-serif;
 }
+.home{
+  height: 80vh;
+}
 
 .general-container {
   display: flex;
@@ -59,7 +62,7 @@
   margin: 5px;
 }
 .card-title {
-  color: white;
+  color: black;
   font-family: var(--titleText); 
   font-size: 4vw; 
 }
