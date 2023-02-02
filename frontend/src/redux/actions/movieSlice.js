@@ -15,10 +15,11 @@ export const getMovies = createAsyncThunk(
 
 export const createMovies = createAsyncThunk(
   "movie/createMovies",
-  async ({updateMovieData, toast}, { rejectWithValue }) => {
+  async ({updateMovieData, navigate, toast}, { rejectWithValue }) => {
     try {
       const response = await api.createMovies(updateMovieData)
-      toast.success("Película agregada exitosamente")
+      toast.success('Pelicula agregada')
+      navigate('/')
       return response.data
     } catch (error) {
       console.log(error.message)

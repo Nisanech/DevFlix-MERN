@@ -11,8 +11,6 @@ import { register } from "../redux/actions/authSlice";
 import { Form, FormGroup, Label, Spinner } from "reactstrap";
 import "./register.css";
 
-import logo from "../components/Header/logoblanco.png";
-
 // Estado inicial
 const initialState = {
   firstName: "",
@@ -43,11 +41,13 @@ const Register = () => {
   // Función para el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
+    // Validación para saber si la contraseña ingresada es la misma en los dos inputs
     if (password !== confirmPassword) {
       return toast.error("La contraseña no coincide");
     }
 
+    // Si todos los campos son correctos se dispara la acción para redirigir al home
     if (email && password && firstName && lastName && confirmPassword) {
       dispatch(register({ formValue, navigate, toast }));
     }
@@ -62,8 +62,6 @@ const Register = () => {
 
   return (
     <div className="fondo">
-      <img className="logodev" src={logo} alt="logo peliculas" />
-
       <div className="containerRegister">
         <h2 className="Principal">Registrarse</h2>
         <Form onSubmit={handleSubmit} className="row">
@@ -176,7 +174,7 @@ const Register = () => {
           </div>
         </Form>
 
-        <Link to="/">
+        <Link to="/login">
           <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
         </Link>
       </div>

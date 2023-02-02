@@ -1,57 +1,24 @@
-import React from "react";
-import "./Header.css";
+// Dependencias
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {NavLink} from 'react-router-dom'
+
+// Acciones de redux
+import { setLogout } from "../../redux/actions/authSlice";
+
+// Iconos
 import { CiUser } from "react-icons/ci";
 import img from "./logoblanco.png";
-import File from "react-file-base64";
-import { toast } from "react-toastify";
 
-import { useState, useEffect } from "react";
-
-
-// Importar disparador de acciones de Redux
-import { useDispatch, useSelector } from "react-redux";
-
-// Importar acciones para el consumo de la API
-import { createMovies} from "../../redux/actions/movieSlice";
-
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalFooter,
-  Label,
-  FormGroup,
-  Form,
-  Input,
-  Col,
-  FormText,
-} from "reactstrap";
-
-
-const initialState = {
-  mov_title:"",
-  mov_year:"",
-  mov_time:"",
-  mov_lang:"",
-  mov_dt_rel:"",
-  mov_rel_country:"",
-  description:"",
-  actors:"",
-  genre:"",
-  director:"",
-  rating:""
-} 
-
-
+// Estilos
+import { Button } from "reactstrap";
+import "./Header.css";
 
 const Header = () => {
- // Estado para ingressar datos de la pelicula
-  const [movieData, setMovieData] = useState(initialState);
- 
-  const {error} = useSelector(state => ({...state.movie})) 
-  // Se declara la constante para hacer uso del hook que dispara la acción del reducer
+  // Dispatch para disparar la acción del reducer
   const dispatch = useDispatch();
 
+<<<<<<< HEAD
   const {
     mov_title,
     mov_year,
@@ -110,54 +77,46 @@ const Header = () => {
         
         handleClear()
       }
+=======
+  // Función para cerrar la sesión
+  const handleLogout = () => {
+    dispatch(setLogout());
+>>>>>>> 1e30ec26b747c331cf661cf9cec1e6896f636113
   };
 
-  // Evento para capturar cuando el valor del input cambie
-  const onInputChange = (e) => {
-    const {name, value} = e.target
-    setMovieData({
-      ...movieData, [name]:value
-    })
-  };
-
-  const handleClear = () =>{
-    setMovieData (initialState)
-  }
-
-  //Use state para activación de la ventana modal
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
+  // Destructurar el valor del usuario logueado
+  const { user } = useSelector((state) => ({ ...state.auth }));
 
   return (
     <header className="head">
       <div className="conta">
         <div className="logo">
-          <img
-            className="logoDevflix"
-            src={img}
-            alt="imagen logo peliculas"
-            srcset=""
-          />
+          <img className="logoDevflix" src={img} alt="imagen logo peliculas" />
         </div>
-
+        {user?.result?._id && (
         <div className="info">
           <div className="icon">
             <CiUser className="icongr"></CiUser>
           </div>
           <div>
-            <h1> Name</h1>
-            <h2> Administrador</h2>
+            
+              <h1 style={{ color: "white", fontSize: "20px" }}>
+                {user?.result?.name}
+              </h1>
+            
           </div>
         </div>
+        )}
 
-        {/* MODAL */}
-        <div>
-          <Button className="add" onClick={toggle}>
-            + Agregar
-          </Button>
-          <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Agregar Película</ModalHeader><br/>
+        {user?.result?._id && (
+          <>
+            <NavLink to='/addMovie'>
+              <Button className="add">+ Agregar</Button>
+            </NavLink>
+          </>
+        )}
 
+<<<<<<< HEAD
             <Form onSubmit={onFormSubmit}>
               <FormGroup>
                 <Label for="exampleText" >
@@ -334,6 +293,19 @@ const Header = () => {
             </ModalFooter>
           </Modal>
         </div>
+=======
+        {user?.result?._id ? (
+          <>
+          <NavLink to='/' onClick={handleLogout}>
+            <Button className="add">Cerrar sesión</Button>
+          </NavLink>
+        </>
+        ) : (
+          <NavLink to='/login' onClick={handleLogout}>
+            <Button className="add">Ingresar</Button>
+          </NavLink>
+        )}
+>>>>>>> 1e30ec26b747c331cf661cf9cec1e6896f636113
       </div>
     </header>
 );

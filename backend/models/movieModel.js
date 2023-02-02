@@ -1,78 +1,30 @@
-//Allows you to work with the database
-const mongoose = require("mongoose"); //método
-const Schema = mongoose.Schema; 
+// Dependencia de mongoose
+const mongoose = require("mongoose");
 
-//Structure of the collection in the database
-const MovieSchema = new Schema({
-    //imformation movie
-    mov_title:{
-        type: String, 
-        required: true,
-        trim:true,
-    },
-    mov_year:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    mov_time:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    mov_lang:{
-        type: String,
-        required: true,
-        trim:true,
-    },
-    mov_dt_rel:{
-        type: Date,
-        required: true,
-        trim:true,
-    }, 
-    mov_rel_country:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    description:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    actors:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    genre:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    director:{
-        type: String,
-        required: true,
-        trim:true,
-    }, 
-    rating : {
-        type: String,
-        required: true,
-        trim:true,
-    },
-
-    //information deleted or not
-    visible:{
-        type:Boolean,
-        default: true,
-    },
-    imageFile:{
-        type: String,
-        default: "",         
-        trim: true,
-    }
+// Creamos el schema para la colección
+const movieSchema = mongoose.Schema({
+  mov_title: String,
+  mov_year: String,
+  mov_time: String,
+  mov_lang: String,
+  mov_rel_country: String,
+  description: String,
+  actors: String,
+  genre: String,
+  director: String,
+  rating: String,
+  imageFile: String,
+  name: String,
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
+  visible: {
+    type: Boolean,
+    default: true,
+  },
 });
 
-const Movie = mongoose.model("Movie", MovieSchema);
+const Movie = mongoose.model("Movie", movieSchema);
 
 module.exports = Movie;
