@@ -24,6 +24,7 @@ const initialState = {
   genre: "",
   director: "",
   rating: "",
+  imageFile: "",
 };
 
 const AddMovie = () => {
