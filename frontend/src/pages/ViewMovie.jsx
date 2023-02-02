@@ -2,7 +2,8 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
-import moment from 'moment'
+import moment from 'moment';
+import "./ViewMovie.css"
 
 // Acciones de redux
 import {getMovie} from '../redux/actions/movieSlice'
@@ -26,10 +27,10 @@ const ViewMovie = () => {
     }, [id])
 
   return (
-    <>
-        <CardMovie {...movie} />
+    <div className='home2'>
+        <CardMovie className="cardHome2"{...movie} />
         <Footer/>
-    </>
+    </div>
   )
 }
 
