@@ -1,11 +1,9 @@
 // Dependencias
 import React, { useState, useEffect } from "react";
-// import MultipleValueTextInput from "react-multivalue-text-input";
 import FileBase from "react-file-base64";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { TagsInput } from "react-tag-input-component";
 
 // Acciones de redux
 import { createMovies } from "../redux/actions/movieSlice";

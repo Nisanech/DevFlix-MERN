@@ -17,13 +17,19 @@ export default function ListMovies({
   director,
   actors,
   rating,
+  mov_time,
+  mov_lang,
+  mov_dt_rel,
+  mov_rel_country,
+  description,
+  genre,
   imageFile
 }) {
   return (
-    <Card
+    <Card className="cardListPpal"
       style={{
-        backgroundColor: "transparent",
-        borderWidth: "1px",
+        backgroundColor: "white",
+        borderWidth: "3px",
         borderStyle: "solid",
         borderColor: "purple",
       }}
@@ -48,7 +54,34 @@ export default function ListMovies({
           {`Rating: ${rating}`}
         </CardSubtitle>
 
-        <Button>Ver más</Button>
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Duración: ${mov_time}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Lenguaje: ${mov_lang}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Estreno: ${mov_dt_rel}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`País: ${  mov_rel_country}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Descripción: ${description}`}
+        </CardSubtitle>
+
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Genero: ${genre}`}
+        </CardSubtitle>
+
+        <div className="buttonsCardList">
+          <Button>Editar</Button>
+          <Button>Eliminar</Button>
+        </div>
       </CardBody>
     </Card>
   );
