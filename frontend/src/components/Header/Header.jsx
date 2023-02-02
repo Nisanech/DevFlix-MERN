@@ -3,15 +3,16 @@ import "./Header.css";
 import { CiUser } from "react-icons/ci";
 import img from "./logoblanco.png";
 import File from "react-file-base64";
+import { toast } from "react-toastify";
 
-import {useState} from "react";
+import { useState, useEffect } from "react";
+
 
 // Importar disparador de acciones de Redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Importar acciones para el consumo de la API
-import { addNewMovie } from "../../redux/actions";
-
+import { createMovies} from "../../redux/actions/movieSlice";
 
 import {
   Button,
@@ -27,66 +28,84 @@ import {
 } from "reactstrap";
 
 
+const initialState = {
+  mov_title:"",
+  mov_year:"",
+  mov_time:"",
+  mov_lang:"",
+  mov_dt_rel:"",
+  mov_rel_country:"",
+  description:"",
+  actors:"",
+  genre:"",
+  director:"",
+  rating:""
+} 
+
+
+
 const Header = () => {
  // Estado para ingressar datos de la pelicula
-  const [mov_title, setMov_title] = useState("");
-  const [mov_year, setMov_year] = useState("");
-  const [mov_time, setMov_time] = useState("");
-  const [mov_lang, setMov_lang] = useState("");
-  const [mov_dt_rel, setMov_dt_rel] = useState("");
-  const [mov_rel_country, setMov_rel_country] = useState("");
-  const [description, setDescription] = useState("");
-  const [actors, setActors] = useState("");
-  const [genre , setGenre ] = useState("");
-  const [director, setDirector] = useState("");
-  
-
+  const [movieData, setMovieData] = useState(initialState);
+ 
+  const {error} = useSelector(state => ({...state.movie})) 
   // Se declara la constante para hacer uso del hook que dispara la acción del reducer
   const dispatch = useDispatch();
 
+  const {
+    mov_title,
+    mov_year,
+    mov_time,
+    mov_lang,
+    mov_dt_rel,
+    mov_rel_country,
+    description,
+    actors,
+    genre,
+    director,
+    rating 
+  } = movieData
+
+  useEffect(()=>{
+    error && toast.error(error)
+  },[error])
   // Función para enviar el formulario al agregar una nueva tarea
   const onFormSubmit = (e) => {
     // Previene el evento por defecto del elemento
     e.preventDefault();
-        var movie = {
-          mov_title: mov_title,
-          mov_year:mov_year,
-          mov_time:mov_time,
-          mov_lang:mov_lang,
-          mov_dt_rel:mov_dt_rel,
-          mov_rel_country:mov_rel_country,
-          description:description,
-          actors:actors,
-          genre:genre,
-          director:director
-        }
 
-        console.log(movie)
-
-        dispatch(addNewMovie(mov_title));
-        dispatch(addNewMovie(mov_year));
-        dispatch(addNewMovie(mov_time));
-        dispatch(addNewMovie(mov_lang));
-        dispatch(addNewMovie(mov_dt_rel));
-        dispatch(addNewMovie(mov_rel_country));
-        dispatch(addNewMovie(description));
-        dispatch(addNewMovie(actors));
-        dispatch(addNewMovie(genre));
-        dispatch(addNewMovie(director));
+      if (
+        mov_title && 
+        mov_year && 
+        mov_time &&
+        mov_lang &&
+        mov_dt_rel &&
+        mov_rel_country &&
+        description &&
+        actors &&
+        genre &&
+        director &&
+        rating 
+        )   
+        {
+        const updateMovieData = {...movieData}
+        dispatch(createMovies(updateMovieData, toast));
         
-        // setMov_title("");
-        // setMov_year("");
-        // setMov_time("");
-        // setMov_lang("");
-        // setMov_dt_rel("");
-        // setMov_rel_country("");
-        // setDescription("");
-        // setActors("");
-        // setGenre(""); 
-        // setDirector("");
-        
-      
+        handleClear()
+      }
   };
+
+  // Evento para capturar cuando el valor del input cambie
+  const onInputChange = (e) => {
+    const {name, value} = e.target
+    setMovieData({
+      ...movieData, [name]:value
+    })
+  };
+
+  const handleClear = () =>{
+    setMovieData (initialState)
+  }
 
   //Use state para activación de la ventana modal
   const [modal, setModal] = useState(false);
@@ -100,7 +119,7 @@ const Header = () => {
             className="logoDevflix"
             src={img}
             alt="imagen logo peliculas"
-            srcSet=""
+            srcset=""
           />
         </div>
 
@@ -131,8 +150,8 @@ const Header = () => {
                   name="mov_title"
                   type="text"
                   placeholder="Título"
+                  onChange={onInputChange}
                   value={mov_title}
-                  onChange={(e) => setMov_title(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -145,8 +164,8 @@ const Header = () => {
                   name="director"
                   type="text"
                   placeholder="Director"
+                  onChange={onInputChange}
                   value={director}
-                  onChange={(e) => setDirector(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -159,8 +178,8 @@ const Header = () => {
                   name="mov_year"
                   type="text"
                   placeholder="Año"
+                  onChange={onInputChange}
                   value={mov_year}
-                  onChange={(e) => setMov_year(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -173,8 +192,8 @@ const Header = () => {
                    name="mov_dt_rel"
                    type="date"
                    placeholder="Estreno"
+                   onChange={onInputChange}
                    value={mov_dt_rel}
-                   onChange={(e) => setMov_dt_rel(e.target.value)}
                    required
                 />
               </FormGroup>
@@ -187,8 +206,8 @@ const Header = () => {
                   name="actors"
                   type="text"
                   placeholder="Reparto"
+                  onChange={onInputChange}
                   value={actors}
-                  onChange={(e)=>setActors(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -201,8 +220,8 @@ const Header = () => {
                   name="mov_lang"
                   type="text"
                   placeholder="Idioma"
+                  onChange={onInputChange}
                   value={mov_lang}
-                  onChange={(e)=>setMov_lang(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -215,8 +234,8 @@ const Header = () => {
                   name="mov_rel_country"
                   type="text"
                   placeholder="País"
+                  onChange={onInputChange}
                   value={mov_rel_country}
-                  onChange={(e)=> setMov_rel_country(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -229,8 +248,8 @@ const Header = () => {
                   name="genre"
                   type="text"
                   placeholder="Género"
+                  onChange={onInputChange}
                   value={genre}
-                  onChange={(e)=>setGenre(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -243,8 +262,8 @@ const Header = () => {
                   name="mov_time"
                   type="text"
                   placeholder="Duración de la película"
+                  onChange={onInputChange}
                   value={mov_time}
-                  onChange={(e)=>setMov_time(e.target.value)}
                   required
                 />
                 <FormText style={{color: "black"}}>Duración en minutos</FormText>
@@ -258,8 +277,8 @@ const Header = () => {
                   name="description"
                   type="text"
                   placeholder="Descripción de la película"
+                  onChange={onInputChange}
                   value={description}
-                  onChange={(e)=>setDescription(e.target.value)}
                   required
                 />
               </FormGroup>
@@ -269,7 +288,7 @@ const Header = () => {
                   File
                 </Label>
                 <Col sm={10}>
-                  <File type="file" multiple={false}/>
+                  <File type="file" multiple={false} onDone={({base64})=>setMovieData({...movieData, imageFile:base64})}/>
                   <FormText>Formato soportado (JPG, PNG)</FormText>
                 </Col>
               </FormGroup>
