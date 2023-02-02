@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import AddMovie from './pages/AddMovie'
 import ViewMovie from './pages/ViewMovie'
+import Dashboard from './pages/Dashboard'
 
 // Componentes
 import Header from './components/Header/Header'
@@ -39,9 +40,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/addMovie" element={<AddMovie />} />
+          <Route path="/editMovie/:id" element={<AddMovie />} />
           <Route path="/movie/:id" element={<ViewMovie />} />
         </Routes>
       </div>

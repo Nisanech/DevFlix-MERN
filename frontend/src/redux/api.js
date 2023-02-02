@@ -18,3 +18,6 @@ export const createMovies = (movieData) => API.post('/movies/new', movieData);
 
 // Petición para ver el detalle de la película
 export const getMovie = (id) => API.get(`/movies/${id}`)
+
+// Petición para editar la película
+export const updateMovie = (updatedMovieData, id) => API.put(`/movies/${id}`, updatedMovieData)

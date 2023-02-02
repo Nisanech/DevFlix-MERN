@@ -13,7 +13,7 @@ const movieSchema = mongoose.Schema({
   genre: String,
   director: String,
   rating: String,
-  imageFile: String,
+  rating: String,
   name: String,
   createdAt: {
     type: Date,
