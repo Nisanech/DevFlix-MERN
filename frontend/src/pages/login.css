@@ -151,8 +151,25 @@ button:active {
 }
 
 
+@media only screen and (max-width: 420px) and (orientation:landscape) {
+  .fondo {
+    background-image: url("./backgroundLogin.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 420px){
+  
+  .fondo {
+    background-image: url("./backgroundLogin.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .containerLogin {
     border-radius: 20px;
     margin: auto;
