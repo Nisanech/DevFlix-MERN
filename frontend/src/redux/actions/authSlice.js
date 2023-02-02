@@ -13,7 +13,7 @@ export const login = createAsyncThunk(
 
       toast.success("Ingreso correcto");
 
-      navigate("/");
+      navigate("/dashboard");
 
       return response.data;
     } catch (error) {

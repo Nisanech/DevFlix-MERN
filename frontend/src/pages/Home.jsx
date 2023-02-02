@@ -10,6 +10,7 @@ import ListMovies from "../components/ListMovies/ListMovies";
 import Footer from "../components/Footer/Footer";
 
 // Estilos
+import {Spinner} from 'reactstrap'
 import "./Home.css";
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <h2>Cargando ... </h2>;
+    return (<Spinner>Cargando</Spinner>)
   }
 
   return (
