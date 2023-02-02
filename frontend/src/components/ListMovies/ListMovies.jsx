@@ -11,122 +11,44 @@ import {
   Button,
 } from "reactstrap";
 
-export default function ListMovies(second) {
-  function GetMovieInformation() {}
-
+export default function ListMovies({
+  mov_title,
+  mov_year,
+  director,
+  actors,
+  rating,
+}) {
   return (
-    <>
-      <div className="general-container">
+    <Card
+      style={{
+        backgroundColor: "transparent",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "purple",
+      }}
+    >
+      <CardImg alt="Card image cap" src={imgprueba} />
+      <CardBody>
+        <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
-        <div className="container_ListMovies">
-          <div className="name-filter_ListMovies">
-            <p style={{ margin: "0" }}>Todas las películas</p>
-            <select name="select">
-              <option value="value0" selected>
-                Género
-              </option>
-              <option value="value1">Drama</option>
-              <option value="value2">Misterio</option>
-              <option value="value3">Acción</option>
-              <option value="value4">Musical</option>
-              <option value="value5">Fantástico</option>
-              <option value="value6">Suspenso</option>
-              <option value="value7">Aventura</option>
-              <option value="value8">Romance</option>
-              <option value="value9">Crimen</option>
-              <option value="value10">Animación</option>
-              <option value="value11">Comedia</option>
-              <option value="value12">Thriller</option>
-              <option value="value13">Horror</option>
-            </select>
-          </div>
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Año: ${mov_year}`}
+        </CardSubtitle>
 
-          <div className="container_movies">
-            <Card
-              style={{
-                backgroundColor: "transparent",
-                borderWidth: "1px",
-                borderStyle: "solid" ,
-                borderColor:"purple"              
-              }}
-            >
-              <CardImg alt="Card image cap" src={imgprueba} />
-              <CardBody>
-                <CardTitle tag="h5">Movie title</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Año:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Director:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Reparto:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Calificación:
-                </CardSubtitle>
-                <Button onClick={GetMovieInformation}>Ver más</Button>
-              </CardBody>
-            </Card>
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Director: ${director}`}
+        </CardSubtitle>
 
-            {/* CARD EXAMPLES (DELETE WHEN MAP THE RESPONSE OF MONGO) */}
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Elenco: ${actors}`}
+        </CardSubtitle>
 
-            <Card
-              style={{
-                backgroundColor: "transparent",
-                borderWidth: "1px",
-                borderStyle: "solid" ,
-                borderColor:"purple"              
-              }}
-            >
-              <CardImg alt="Card image cap" src={imgprueba} />
-              <CardBody>
-                <CardTitle tag="h5">Movie title</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Año:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Director:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Reparto:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Calificación:
-                </CardSubtitle>
-                <Button onClick={GetMovieInformation}>Ver más</Button>
-              </CardBody>
-            </Card>
-            <Card
-              style={{
-                backgroundColor: "transparent",
-                borderWidth: "1px",
-                borderStyle: "solid" ,
-                borderColor:"purple"              
-              }}
-            >
-              <CardImg alt="Card image cap" src={imgprueba} />
-              <CardBody>
-                <CardTitle tag="h5">Movie title</CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Año:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Director:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Reparto:
-                </CardSubtitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                  Calificación:
-                </CardSubtitle>
-                <Button onClick={GetMovieInformation}>Ver más</Button>
-              </CardBody>
-            </Card>            
-          </div>
-        </div>
-        
-      </div>
-    </>
+        <CardSubtitle className="mb-2 text-muted" tag="h6">
+          {`Rating: ${rating}`}
+        </CardSubtitle>
+
+        <Button>Ver más</Button>
+      </CardBody>
+    </Card>
   );
 }
