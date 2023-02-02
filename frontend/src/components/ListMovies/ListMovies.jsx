@@ -34,7 +34,7 @@ export default function ListMovies({
         borderColor: "purple",
       }}
     >
-      <CardImg alt="Card image cap" src={imageFile} />
+      <CardImg alt="Card image cap" style={{height:"15rem", width:"10rem"}} src={imageFile} />
       <CardBody>
         <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
