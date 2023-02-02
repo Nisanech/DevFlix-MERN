@@ -13,10 +13,11 @@ const API_URL = "http://localhost:5000/movies";
 export const addNewMovie = (data) => async (dispatch) => {
   try {
     // Access to the API path that executes the function of a new movie from the controller
-    const res = await axios.post(`${API_URL}/movie/new`, { data });
+    const res = await axios.post(`${API_URL}/movie/new`, 
+    [data]);
 
     //The type of action and the data it receives are referenced
-    dispatch({ type: ADDNEW_MOVIE, payload: res.data });
+    dispatch({ type: ADDNEW_MOVIE, payload: res.data});
   } catch (error) {
     //error in case movie cannot be added
     console.log("error al agregar una nueva pelicula", error.message);
