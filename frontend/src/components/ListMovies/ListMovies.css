@@ -3,9 +3,9 @@
   --titleText: "Quicksand", sans-serif;
   --text: "Saira", sans-serif;
 }
-.home{
+/* .home{
   height: 100%;
-}
+} */
 
 .general-container {
   display: flex;
