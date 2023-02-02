@@ -29,7 +29,7 @@ const Home = () => {
     <>
       <div className="home">
         {/* Filtros */}
-        {/* <div className="general-container">
+        <div className="general-container">
           <div className="container_ListMovies">
             <div className="name-filter_ListMovies">
               <p style={{ margin: "0" }}>Todas las películas</p>
@@ -53,7 +53,7 @@ const Home = () => {
               </select>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className="container_movies">
           {movies &&
