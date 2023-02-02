@@ -1,13 +1,20 @@
 // Dependencias
 import React, { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // Redux
 import { setUser } from "./redux/actions/authSlice";
 
+// Páginas
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import AddMovie from './pages/AddMovie'
+
 // Componentes
-import Layout from "./layout/Layout";
+import Header from './components/Header/Header'
 
 // Estilos
 import "react-toastify/dist/ReactToastify.css";
@@ -21,11 +28,22 @@ function App() {
   useEffect(() => {
     dispatch(setUser(user));
   }, []);
+
   return (
-    <div className="App">
-      <ToastContainer />
-      <Layout />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+
+        <ToastContainer />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/addMovie" element={<AddMovie />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

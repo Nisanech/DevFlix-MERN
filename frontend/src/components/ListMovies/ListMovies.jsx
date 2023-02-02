@@ -17,6 +17,7 @@ export default function ListMovies({
   director,
   actors,
   rating,
+  imageFile
 }) {
   return (
     <Card
@@ -27,7 +28,7 @@ export default function ListMovies({
         borderColor: "purple",
       }}
     >
-      <CardImg alt="Card image cap" src={imgprueba} />
+      <CardImg alt="Card image cap" src={imageFile} />
       <CardBody>
         <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
