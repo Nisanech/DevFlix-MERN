@@ -15,6 +15,7 @@ const movieSchema = mongoose.Schema({
   rating: String,
   rating: String,
   name: String,
+  imageFile: String,
   createdAt: {
     type: Date,
     default: new Date(),
