@@ -130,7 +130,7 @@ const AddMovie = () => {
         maxWidth: "600px",
         alignContent: "center",
         marginTop: "50px",
-        marginBottom: "20px",
+        marginBottom: "40px",
       }}
     >
       <h5>Agregar Película</h5>
@@ -275,7 +275,7 @@ const AddMovie = () => {
         </div>
 
         <div className="col-12">
-          <MDBBtn style={{ width: "100%" }} className="mt-3">
+          <MDBBtn style={{ width: "100%"}} className="mt-3">
             Guardar
           </MDBBtn>
           <MDBBtn

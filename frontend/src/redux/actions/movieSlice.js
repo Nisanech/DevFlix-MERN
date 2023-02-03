@@ -52,6 +52,8 @@ export const updateMovie = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
+      console.log(error.message)
+      return rejectWithValue(error.response.data)
     }
   }
 );

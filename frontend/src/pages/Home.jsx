@@ -33,7 +33,7 @@ const Home = () => {
         <div className="general-container">
           <div className="container_ListMovies">
             <div className="name-filter_ListMovies">
-              <p style={{ margin: "0" }}>Todas las películas</p>
+              <p style={{ margin: "25px" }}>Todas las películas</p>
               <select name="select">
                 <option value="value0" selected>
                   Género

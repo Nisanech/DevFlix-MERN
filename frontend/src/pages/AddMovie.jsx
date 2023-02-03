@@ -10,6 +10,7 @@ import { createMovies } from "../redux/actions/movieSlice";
 
 // Estilos
 import { Button, FormGroup, Form, Input, Nav } from "reactstrap";
+import Footer from "../components/Footer/Footer";
 
 // Se declara el estado inicial para el valor de cada input
 const initialState = {
@@ -23,6 +24,7 @@ const initialState = {
   genre: "",
   director: "",
   rating: "",
+  imageFile: "",
 };
 
 const AddMovie = () => {
@@ -234,13 +236,14 @@ const AddMovie = () => {
               setMovieData({ ...movieData, imageFile: base64 })
             }
           />
+          <p>Resolución recomendada de imagen (720x340 PX)</p>
         </div>
 
         <div className="col-12">
           <Button style={{ width: "100%" }}>Guardar</Button>
         </div>
         <NavLink to="/" className="col-12">
-          <Button style={{ width: "100%" }}>Cancelar</Button>
+          <Button style={{ width: "100%", marginBottom:"15px"}}>Cancelar</Button>
         </NavLink>
       </Form>
     </div>

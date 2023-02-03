@@ -16,6 +16,7 @@ const CardMovie = ({
   imageFile,
 }) => {
   return (
+  <>
     <div className="card2">
       <h2 className="titleMovie">{mov_title}</h2>
       <div className="cardPpal">
@@ -60,7 +61,44 @@ const CardMovie = ({
         </NavLink>
       </div>
     </div>
+    </>
   );
 };
 
 export default CardMovie;
+
+
+
+
+  /* <div className="card">
+<div className="cardMovie">
+  <h2>GLADIADOR</h2>
+  <div className="cardPpal">
+    <div className="image">
+      <img className="imgPeli"src={image} alt="" />
+    </div>
+    <div className="infoMovie">
+      <h3>DIRECTOR</h3>
+      <p>Nombre director</p>
+      <h3>AÑO</h3>
+      <p>2002</p>
+      <h3>ESTRENO</h3>
+      <p>dd/mm/aaaa</p>
+      <h3>GENERO</h3>
+      <p>Nombre genero</p>
+      <h3>REPARTO</h3>
+      <p>Nombre del reparto</p>
+      <h3>LENGUAJE</h3>
+      <p>Idioma</p>
+      <h3>DESCRIPCION</h3>
+      <p>Nombre descripcion</p>
+      
+<div className="buttons">
+        <button className="editButton">Editar</button>
+        <button className="deleteButton">Eliminar</button>
+</div>
+    </div>
+  </div>
+</div>
+</div> */
+

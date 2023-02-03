@@ -23,20 +23,20 @@ export default function ListMovies({
   _id,
 }) {
   return (
-    <Card
+    <Card className="cardListPpal"
       style={{
-        backgroundColor: "transparent",
-        borderWidth: "1px",
+        /* backgroundColor: "white", */
+        borderWidth: "3px",
         borderStyle: "solid",
         borderColor: "purple",
       }}
     >
-      <CardImg alt="Card image cap" src={imageFile} />
+      <CardImg src={imageFile}/>
       <CardBody>
         <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          {`Año: ${mov_year}`}
+        <span>Año: </span>${mov_year}
         </CardSubtitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
