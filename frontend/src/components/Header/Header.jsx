@@ -61,9 +61,7 @@ const Header = () => {
           </NavLink>
         </>
         ) : (
-          <NavLink to='/login' onClick={handleLogout}>
-            <Button className="add" style={{border:"none", borderRadius:"15px"}}>Ingresar</Button>
-          </NavLink>
+          ""
         )}
       </div>
     </header>

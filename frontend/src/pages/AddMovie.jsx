@@ -10,7 +10,6 @@ import { createMovies } from "../redux/actions/movieSlice";
 
 // Estilos
 import { Button, FormGroup, Form, Input, Nav } from "reactstrap";
-import Footer from "../components/Footer/Footer";
 
 // Se declara el estado inicial para el valor de cada input
 const initialState = {
@@ -32,7 +31,7 @@ const AddMovie = () => {
   const [movieData, setMovieData] = useState(initialState);
 
   // Constante para mostrar si hay errores al enviar la información
-  const { error, loading } = useSelector((state) => ({ ...state.movie }));
+  const { error } = useSelector((state) => ({ ...state.movie }));
 
   //   Se destructura la información del usuario que ingresó al sistema
   const { user } = useSelector((state) => ({ ...state.auth }));
@@ -242,7 +241,7 @@ const AddMovie = () => {
         <div className="col-12">
           <Button style={{ width: "100%" }}>Guardar</Button>
         </div>
-        <NavLink to="/" className="col-12">
+        <NavLink to="/home" className="col-12">
           <Button style={{ width: "100%", marginBottom:"15px"}}>Cancelar</Button>
         </NavLink>
       </Form>

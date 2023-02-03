@@ -19,7 +19,7 @@ export const createMovies = createAsyncThunk(
     try {
       const response = await api.createMovies(updateMovieData);
       toast.success("Pelicula agregada");
-      navigate("/");
+      navigate("/home");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -52,8 +52,6 @@ export const updateMovie = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
-      console.log(error.message)
-      return rejectWithValue(error.response.data)
     }
   }
 );

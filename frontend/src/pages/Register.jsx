@@ -174,7 +174,7 @@ const Register = () => {
           </div>
         </Form>
 
-        <Link to="/login">
+        <Link to="/">
           <p className="olvidar">¿Ya tienes una cuenta? | Inicia Sesión</p>
         </Link>
       </div>

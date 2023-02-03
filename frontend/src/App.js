@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./redux/actions/authSlice";
 
 // Páginas
-import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AddMovie from './pages/AddMovie'
@@ -39,9 +38,8 @@ function App() {
         <ToastContainer />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/addMovie" element={<AddMovie />} />
           <Route path="/editMovie/:id" element={<AddMovie />} />
