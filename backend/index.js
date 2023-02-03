@@ -22,8 +22,8 @@ const app = express();
 
 // Middleware
 app.use(morgan("dev"));
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded());
 
 // Usar cors
 app.use(cors());
