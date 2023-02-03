@@ -2,11 +2,11 @@
 import axios from "axios";
 
 // Se declara la constante para la URL de la API
-//const API = axios.create({ baseURL: "http://localhost:5000" }); // URL Local
+const API = axios.create({ baseURL: "http://localhost:5000" }); // URL Local
 
-const API = axios.create({
-  baseURL: "https://dev-flix-95d2pjwf9-nisanech.vercel.app/",
-});
+// const API = axios.create({
+//   baseURL: "https://dev-flix-api.vercel.app/",
+// });
 
 // Petición para el inicio de sesión
 export const signIn = (formData) => API.post("/users/signin", formData);
