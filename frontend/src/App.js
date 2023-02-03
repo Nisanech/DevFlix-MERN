@@ -8,7 +8,6 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./redux/actions/authSlice";
 
 // Páginas
-import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AddMovie from './pages/AddMovie'
@@ -20,7 +19,7 @@ import Header from './components/Header/Header'
 
 // Estilos
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+/* import "./App.css"; */
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +28,7 @@ function App() {
 
   useEffect(() => {
     dispatch(setUser(user));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -39,9 +39,8 @@ function App() {
         <ToastContainer />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/addMovie" element={<AddMovie />} />
           <Route path="/editMovie/:id" element={<AddMovie />} />
