@@ -38,7 +38,7 @@ app.use("/movies", movieRoute);
 connectDB();
 
 // Puerto de conexión del servidor
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Conexión del servidor
 app.get("/", (req, res) => {
