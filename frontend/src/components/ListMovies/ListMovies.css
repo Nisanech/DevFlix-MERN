@@ -3,21 +3,6 @@
   --titleText: "Quicksand", sans-serif;
   --text: "Saira", sans-serif;
 }
-/* .home{
-  height: 100%;
-} */
-
-.general-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.container_ListMovies {
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .name-filter_ListMovies {
   color: white;
   display: flex;
@@ -25,7 +10,6 @@
   align-items: center;
   width: 75vw;
 }
-
 .name-filter_ListMovies p {
   font-family: var(--titleText);
   font-size: 4vw;
@@ -41,43 +25,47 @@
   font-family: var(--titleText);
 }
 .card {
-  margin: 10px;
+  margin: 5px 5px;
   padding: 5px;
   width: 70vw;
 }
-.card img {
-  width: 95%;
-  margin: 2vw auto 0 auto;
+.cardListPpal img {
+  width: 65vw;
+  margin: auto;
 }
-
-.buttonsCardList{
+.buttonsCardList {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .card button {
-  width: 50%;
-  background: linear-gradient(90deg, rgba(0,66,255,0.5) 0%, rgba(235,0,27,0.5) 100%);
-  border: none;  
+  width: 60vw;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 66, 255, 0.5) 0%,
+    rgba(235, 0, 27, 0.5) 100%
+  );
+  border: none;
   font-family: var(--titleText);
-  font-size: 2.5vw;
-  margin: 5px;
 }
 .card-title {
   color: black;
-  font-family: var(--titleText); 
-  font-size: 4vw; 
+  font-family: var(--titleText);
+  font-size: 4vw;
 }
 .card h6 {
-  color: white; 
   font-family: var(--titleText);
-  font-size: 3vw; 
+  font-size: 3vw;
 }
-h6.text-muted {
-  color: white;
+.card-body {  
+  margin-bottom: 10px;
 }
-
 @media screen and (min-width: 575px) {
-  .container_ListMovies {
-    width: 60vw;
+  .card-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 10vh;    
   }
   .name-filter_ListMovies {
     width: 50vw;
@@ -86,28 +74,51 @@ h6.text-muted {
     font-size: 2vw;
   }
   .card {
-    width: 27vw;
-    border-width: 3px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+    max-width: 20vw;
+  } 
+  .cardListPpal img {
+    width: 95%;    
   }
-  .card img {
-    margin: 5px auto 0 auto;
+  .card button {
+    width: 17vw;   
   }
   .card-title {
-    font-size: 1.2vw;
+    font-size: 1.4vw;
   }
   .card h6 {
     font-size: 1vw;
   }
-  .card button {    
+  .card button {
+    font-size: 1vw;
+  }  
+}
+@media screen and (min-width: 870px) {
+  .card-body {  
+    height: 15vh;    
+  }
+  .name-filter_ListMovies {
+    width: 50vw;
+  }
+  .name-filter_ListMovies p {
+    font-size: 2vw;
+  }
+  .card {
+    max-width: 15vw;
+  }  
+  .cardListPpal img {
+    width: 95%;
+  }
+  .card button {
+    width: 12vw;  
+  }
+  .card-title {
+    font-size: 1.3vw;
+  }
+  .card h6 {
+    font-size: 1.1vw;
+  }
+  .card button {
     font-size: 1vw;
   }
-
 }
-
-@media screen and (min-width: 768px) and (max-width:1023px) {
-.home{
-  height: 74vh;
-}
-}
+ 

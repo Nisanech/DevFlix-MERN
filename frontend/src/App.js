@@ -20,7 +20,7 @@ import Header from './components/Header/Header'
 
 // Estilos
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+/* import "./App.css"; */
 
 function App() {
   const dispatch = useDispatch();

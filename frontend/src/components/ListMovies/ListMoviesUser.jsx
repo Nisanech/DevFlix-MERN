@@ -24,17 +24,20 @@ export default function ListMovies({
 }) {
   return (
     <Card
-    style={{
-      backgroundColor: "white",
-      borderWidth: "3px",
-      borderStyle: "solid",
-      borderColor: "purple",
-    }}
+      style={{
+        backgroundColor: "white",
+        borderWidth: "3px",
+        borderStyle: "solid",
+        borderColor: "purple",
+      }}
       className="cardListPpal"
     >
-      <CardImg style={{height:"15rem", width:"10rem"}} alt="Card image cap" src={imageFile} />
+      <CardImg alt="Card image cap" src={imageFile} />
       <CardBody>
-        <CardTitle tag="h5">{`Título: ${mov_title}`}</CardTitle>
+        
+        <CardTitle tag="h5">
+          {mov_title}
+        </CardTitle>
 
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           {`Año: ${mov_year}`}
@@ -51,16 +54,17 @@ export default function ListMovies({
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           {`Rating: ${rating}`}
         </CardSubtitle>
-
-
-        <div className="buttonsCardList">
-        <Link to={`/movie/${_id}`}>
-          <Button>Ver más</Button>
-        </Link>
+        
+      </CardBody>
+      <div className="buttonsCardList">
+          <Link to={`/movie/${_id}`}>
+            <Button>Ver más</Button>
+          </Link>
           <Button className="mt-3">Editar</Button>
           <Button className="mt-3">Eliminar</Button>
         </div>
-      </CardBody>
+
+
     </Card>
   );
 }

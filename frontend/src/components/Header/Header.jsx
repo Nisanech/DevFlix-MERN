@@ -1,5 +1,4 @@
 // Dependencias
-import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {NavLink} from 'react-router-dom'
 
@@ -49,8 +48,8 @@ const Header = () => {
 
         {user?.result?._id && (
           <>
-            <NavLink to='/addMovie'>
-              <Button className="add">+ Agregar</Button>
+            <NavLink to='/addMovie'>              
+              <Button className="add" style={{border:"none", borderRadius:"15px"}}>+ Agregar</Button>
             </NavLink>
           </>
         )}
@@ -58,12 +57,12 @@ const Header = () => {
         {user?.result?._id ? (
           <>
           <NavLink to='/' onClick={handleLogout}>
-            <Button className="add">Cerrar sesión</Button>
+            <Button className="add" style={{border:"none", borderRadius:"15px"}}>Cerrar sesión</Button>
           </NavLink>
         </>
         ) : (
           <NavLink to='/login' onClick={handleLogout}>
-            <Button className="add">Ingresar</Button>
+            <Button className="add" style={{border:"none", borderRadius:"15px"}}>Ingresar</Button>
           </NavLink>
         )}
       </div>

@@ -242,7 +242,7 @@ const AddMovie = () => {
           <Button style={{ width: "100%" }}>Guardar</Button>
         </div>
         <NavLink to="/" className="col-12">
-          <Button style={{ width: "100%" }}>Cancelar</Button>
+          <Button style={{ width: "100%", marginBottom:"15px"}}>Cancelar</Button>
         </NavLink>
       </Form>
     </div>
