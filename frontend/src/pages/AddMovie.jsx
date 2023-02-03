@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createMovies } from "../redux/actions/movieSlice";
 
 // Estilos
-import { Button, FormGroup, Form, Input, Nav } from "reactstrap";
+import { Button, FormGroup, Form, Input } from "reactstrap";
 
 // Se declara el estado inicial para el valor de cada input
 const initialState = {
