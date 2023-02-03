@@ -22,8 +22,8 @@ const app = express();
 
 // Middleware
 app.use(morgan("dev"));
-app.use(express.json({ limit: "30mb", extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // Usar cors
 app.use(cors());
