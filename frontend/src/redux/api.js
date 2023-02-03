@@ -15,7 +15,7 @@ export const signIn = (formData) => API.post("/users/signin", formData);
 export const signUp = (formData) => API.post("/users/signup", formData);
 
 // Petición para obtener las películas
-export const getMovies = () => API.get('/movies');
+export const getMovies = () => API.get('/movies/traer');
 
 // Petición para ingresar toda la información de la película
 export const createMovies = (movieData) => API.post('/movies/new', movieData);
