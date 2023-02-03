@@ -236,6 +236,7 @@ const AddMovie = () => {
               setMovieData({ ...movieData, imageFile: base64 })
             }
           />
+          <p>Resolución recomendada de imagen (720x340 PX)</p>
         </div>
 
         <div className="col-12">
