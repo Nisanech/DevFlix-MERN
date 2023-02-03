@@ -8,7 +8,7 @@ const{ createMovie, getMovies, getMovie, updateMovie } = require("../controllers
 
 
 //Routes to the API
-router.get("/", getMovies); //Get Movies
+router.get("/traer", getMovies); //Get Movies
 router.post("/new", createMovie); //Create Movie
 router.get('/:id', getMovie) // Ver detalle de la película
 router.put('/:id', updateMovie)
