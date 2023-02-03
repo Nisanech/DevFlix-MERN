@@ -27,6 +27,8 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // Usar cors
 app.use(cors());
+// Usar conexión de la base de datos
+connectDB();
 
 // Endpoints
 app.use("/users", userRoute);
@@ -34,8 +36,6 @@ app.use("/users", userRoute);
 // Endpoints movies
 app.use("/movies", movieRoute);
 
-// Usar conexión de la base de datos
-connectDB();
 
 // Puerto de conexión del servidor
 const PORT = process.env.PORT || 5000;
